@@ -2,6 +2,8 @@
 
 * [Terasology GitHub](https://github.com/MovingBlocks/Terasology)
 
+## Onboarding experience
+
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
 This issue has already had some work on it, as seen in [PR #3705](https://github.com/MovingBlocks/Terasology/pull/3705).
@@ -14,7 +16,7 @@ There is currently functionality to rebind key buttons in-game, but this does no
 The GUI element responsible for detecting the new rebind does not respond when a controller button is pressed.
 Adding this functionality would allow users, whose controller does not bind correctly by default, to use their controller.
 It would also allow all users to configure their controllers as they wish.
-    
+
 
 #### 2. Add setting for controller axis rotation speed
 The speed when rotating the camera with the controller is very slow, to the point of the game almost being unplayable.
@@ -28,3 +30,12 @@ control the camera rotation speed.
 ## Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
 
 ### Requirements
+
+### 1. Display the name of the tooltip when switching tooltip
+Currently, the Terasology only has a toolbar where you can see the available tooltips and if you hover them you see the name of the toolbar. The community of Terasology now wants a small display that shows the name of the tooltip when you switch slots from 0...9.
+
+### 2. Fix the location of the display message
+After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the location of the display was not adjustable relative to the screen.
+
+### 3. Fade the display after a couple of seconds if we don't switch tooltip
+After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
