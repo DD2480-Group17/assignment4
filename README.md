@@ -31,11 +31,11 @@ control the camera rotation speed.
 
 ### Requirements
 
-### 1. Display the name of the tooltip when switching tooltip
+#### 1. Display the name of the tooltip when switching tooltip
 Currently, the Terasology only has a toolbar where you can see the available tooltips and if you hover them you see the name of the toolbar. The community of Terasology now wants a small display that shows the name of the tooltip when you switch slots from 0...9.
 
-### 2. Fix the location of the display message
+#### 2. Fix the location of the display message
 After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the location of the display was not adjustable relative to the screen.
 
-### 3. Fade the display after a couple of seconds if we don't switch tooltip
+#### 3. Fade the display after a couple of seconds if we don't switch tooltip
 After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
