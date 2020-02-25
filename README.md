@@ -39,3 +39,11 @@ After we re-used and implemented some of the code from an old PR (that the commu
 
 #### 3. Fade the display after a couple of seconds if we don't switch tooltip
 After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
+
+### Workflow
+
+Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before.
+Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we 
+corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
+
+We will modify the file inventoryhud.ui to display the name of the item at a correct place and modify InventoryHud.java to enable fading text.
