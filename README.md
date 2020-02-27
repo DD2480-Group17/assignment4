@@ -7,9 +7,13 @@ URL: [Terasology GitHub](https://github.com/MovingBlocks/Terasology)
 
 One or two sentences describing it
 
+---
+
 ## Onboarding experience
 
 After assignment 3, we all wanted to change project because we had a lot of problems with setting up the project correctly. First, we tried to set up the OSS SirixDB. However, we did not manage to do that properly even when we asked for help from the teaching assistants. After a couple of hours without any success, we decided to go back to the OSS Terasology again. We felt that we did not have time to spend on the set up anymore, and some of the features in Terasology worked before during assignment 3. We found a more detailed description of how to set up Terasology, which we used this time. Now everything works as it should according to the documentation for Terasology.
+
+---
 
 ## UML class diagram and its description
 
@@ -17,10 +21,14 @@ Optional (point 1): Architectural overview.
 
 Optional (point 2): relation to design pattern(s).
 
+---
+
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
 This issue has already had some work on it, as seen in [PR #3705](https://github.com/MovingBlocks/Terasology/pull/3705).
 It does not resolve the entire issue however, and so we will continue work on the issue with the PR as a starting point.
+
+---
 
 ### Requirements
 This issue had a large scope of changes and was open for interpretation. Therefore, we came up with the following concrete requirements.
@@ -42,12 +50,16 @@ Right now, when a controller is connected to a computer, one has to close the ga
 #### 4. Implement menu navigation with controller
 Currently, even when the controller is connected and working, it cannot be used to navigate through the menu. One has to use mouse or keyboard to navigate through the menu. That is why the requirement is about making the controller able to do that. (Not solved due to time limitations).
 
+---
+
 ### Workflow
-#### Requirement 1
+
+##### Requirement 1
 
 #### Requirement 2
 
 #### Requirement 3
+
 To handle automatic recognition of the controller on connecting and disconnecting it while the game was running, different methods were looked up. Moreover, there is a comment in the code that says that the **lwjgl** library has the interface for such a functionality. However, this interface has no implementation.
 
 Furthermore, the method for discovering the controllers that are connected has a limited functionality in that the method does not allow you to poll for **changes** in the list of the connected controllers on **all** the well-known operating systems after the game had already been started. However, the library allows to poll the list of the connected controllers when the game is started and this list is fixed regardless of whether some changes in the controllers connection happen during the game.
@@ -77,6 +89,8 @@ UML over that changes follows:
 #### Requirement 4
 Not solved due to time limitations.
 
+---
+
 ## Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
 
 ### Requirements
@@ -91,11 +105,16 @@ After we re-used and implemented some of the code from an old PR (that the commu
 After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
 
 ### Workflow
-Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before.
-Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we
-corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
+Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before. Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
 
-We will modify the file inventoryhud.ui to display the name of the item at a correct place and modify InventoryHud.java to enable fading text.
+### Project plan
+
+To be able to fulfill the requirements we need to:
+* Read necessary documentation from Terasology such as wikis for NUI and Modules
+* Import and implement the module Inventory to our local Terasology.
+* Modify the NUI inventoryHud.ui to display the name of the item at a correct place at the screen.
+* Modify the class InventoryHud.java to be enable to fading text.
+* Try to create tests or modify existing test for the changes we will made.
 
 ## Requirements affected by functionality being refactored
 
@@ -140,7 +159,7 @@ For each team member, how much time was spent in
 3. reading documentation;
 
 `Marcus`:
-* 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading 
+* 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading
 documentation about Terasology.
 
 
@@ -158,10 +177,10 @@ About 4-5 hours in total including reading documentation. A lot of documentation
 
 `Marcus`:
 * 7h, alot of projects where attempted which are listed bellow:
-* [SirixDB project](https://github.com/sirixdb/sirix), Updated to Java 13, updated to Gradle 6, nothing worked to get the program to work with CMD on Windows or Intellj. The project 
+* [SirixDB project](https://github.com/sirixdb/sirix), Updated to Java 13, updated to Gradle 6, nothing worked to get the program to work with CMD on Windows or Intellj. The project
 could not find the variable var which should be included in Java 13. Thee problem where not solved and abandoned because all group members had different issues.
 * Teasology took time to set up, it did not work with Intellij and I needed to downgrade to Java 1.8. After several hours bug fixing the following sequence enables the game
-to be executed from CMD. gradlew, gradlew jar game, without jar bug's appeared in the game. 
+to be executed from CMD. gradlew, gradlew jar game, without jar bug's appeared in the game.
 
 `George`:
 About 4-5 hours. The following was tried:
@@ -172,7 +191,7 @@ About 4-5 hours. The following was tried:
 5. analyzing code/output;
 
 `Marcus`:
-* 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the 
+* 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the
 solution should be implemented.
 
 `George`:
