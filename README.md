@@ -283,18 +283,32 @@ that the failing test cases are not related to the requirement being implemented
 
 ### 1. plenary discussions/meetings
 
-1 hour in total for each student
+When we were getting started with choosing project, issues and setting up we worked together, and so discussion and
+setup time often overlapped. We met the entire groups on two different occasions, in total for 8 hours.
 
 ### 2. discussions within parts of the group
 
-30 min to 1 hour in total for each student?? or none??
+`Edvin`: 30 min
+* Review and test of refresh controller button PR
 
 ### 3. reading documentation
+
+`Edvin`: 2h
+* 1h, [Terasology Wiki](https://github.com/MovingBlocks/Terasology/wiki) including
+[Events](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems) and
+[NUI](https://github.com/Terasology/TutorialNui/wiki)
+* 1h, [Terasology Issues and PRs](https://github.com/MovingBlocks/Terasology/issues) including
+[#3577](https://github.com/MovingBlocks/Terasology/issues/3577),
+[#2585](https://github.com/MovingBlocks/Terasology/issues/2585),
+[#2569](https://github.com/MovingBlocks/Terasology/issues/2569),
+[#1514](https://github.com/MovingBlocks/Terasology/issues/1514),
+[#3193](https://github.com/MovingBlocks/Terasology/pull/3193),
+[#3648](https://github.com/MovingBlocks/Terasology/issues/3648),
+[#3705](https://github.com/MovingBlocks/Terasology/pull/3705)
 
 `Marcus`:
 * 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading
 documentation about Terasology.
-
 
 `George`:
 
@@ -308,6 +322,14 @@ About 4-5 hours in total including reading documentation. A lot of documentation
 * Even looking up some things about UML to draw UML of the changes done in the project.
 
 ### 4. configuration and setup
+
+`Edvin`: 3h 30 min
+* 3h for [SirixDB](https://github.com/sirixdb/sirix). Had to update to Java 13 and Gradle 6. Set up a docker container,
+but I never got the docker image to run. Some tests worked, but it never finished building
+* 30 min for [Terasology](https://github.com/MovingBlocks/Terasology). The Terasology project had a great Gradle setup
+which could generate IntelliJ config via the command `gradle idea`. I had one issue which caused IntelliJ to not find
+main class path. I needed to run the code via IntelliJ however to debug it in debug mode. I solved it by using the
+`Rebuild Project` action.
 
 `Marcus`:
 * 7h, alot of projects where attempted which are listed bellow:
@@ -325,6 +347,20 @@ About 4-5 hours. The following was tried:
 
 ### 5. analyzing code/output
 
+`Edvin`: 13h  
+Most of my time was spent reading and figuring out code, with varying amount of documentation. My primary method for
+exploring the codebase is searching for keywords and from those points exploring relevant methods both up and down
+in the stack trace by using IntelliJ's built-in function to jump to methods and to search for method use cases. My
+secondary method for exploring the codebase is by using IntelliJ's debugger, which is usually good for understanding
+what values different fields have at different points in runtime.
+* 2h for locating and understanding the `ControllerSettingsScreen`.
+* 2h for locating and understanding the input processing system in `InputSystem`.
+* 3h for locating and understanding the event system in `InputSystem`, `EventCopier`, `ButtonEvent`
+and `NUIManagerInternal`.
+* 3h for locating and understanding the binding system in `UIInputBind`, `ControllerInput` and `ControllerId`.
+* 2h for figuring out XBOX 360 Controller button/key/axis labeling and naming. (It is surprisingly confusing!)
+* 1h for understanding existing input and event test systems.
+
 `Marcus`:
 * 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the
 solution should be implemented.
@@ -334,6 +370,13 @@ solution should be implemented.
 See question 8.
 
 ### 6. writing documentation
+
+`Edvin`: 6h
+* 30 min, writing requirements for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648).
+* 1h, creating a clean patch and document contents of PR.
+* 4h 30 min, writing this README.
+
+
 
 `Marcus`:
 * 7 h Wrote documentation to InventoryHud.java, animation thread and in the test class TestInventoryHud.java.
@@ -351,6 +394,16 @@ About 4-5 hours. The following was done:
 
 ### 7. writing code
 
+`Edvin`: 9h 30 min  
+Added 241 LOC as measured with Lizard. Implemented requirement 1 & 2 for
+[issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648).
+* 1h implementing axis sensitivity in `ControllerSettingsScreen`, `ControllerId` and `ControllerConfig`.
+* 2h implementing button input processing in `InputSystem`.
+* 4h implementing controller button events in `InputSystem`, `EventCopier`, `ControllerButtonEvent` and `NUIManagerInternal`.
+* 1h implementing controller axis events in `InputSystem` and `ControllerAxisEvent`.
+* 1h 30 min implementing controller button test in `InputSystemTests`.
+
+
 `Marcus`:
 * 8 hours were spent on adding support for adjusting location on tooltipbar and added functionality that the toolbar diapper after 2seconds and reapper if item is switched.
 This was a bit hard to get to work with the original code.
@@ -360,6 +413,11 @@ This was a bit hard to get to work with the original code.
 See question 8.
 
 ### 8. running code
+
+`Edvin`:  
+* The main game code was run a lot to test changes in the code and to debug. This time has been taken into account
+in analyzing and writing code.
+* The entire test suite was only run a few times, and only took a minute to run.
 
 `Marcus`:
 
