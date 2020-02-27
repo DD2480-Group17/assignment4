@@ -193,12 +193,11 @@ Terasology uses modules to apply new packages and functionality. This is to avoi
 By adding functionality to the InventoryHud.java and inventoryHud.ui we can keep the original workflow and create the desired functions.
 
 #### Requirement 1.
-Requirement 1.
-
 After we understood the architecture related to this issue and got some help from one of the members in the Terasology community,
 we managed to implement some of the old code from an PR from 2018. The changes that we made affected the module Inventory, the class InventoryHud.java and the NUI inventoryHud.ui. To be able to display the name of the current tooltip, we needed to create a new core widget as a `UIText` and initialise it with the abstract method `initialise()`. We also needed to add the `UIText` as an JSON object in content of the NUI inventoryHud. To be able to know which item the localPlayer where currently holding, we used the class from PR 2018 called `CurrentSlotItem` and the method `get()` which returns the name of the current item. By doing that, we were able to show a static display message of the name of the current tooltip and make it change whenever we switch slots from 0...9. The display message where static.
 
 The changes for Requirement 1 are following the design-pattern for the Inventory module. We use the method `find()` to initialise the `UIText` widget, which they had used for initialising the other widget `Crosshair`. The new class `CurrentSlotItem` that we implemented, is also following the design-pattern for the Inventory module where the classes are private and extend the suitable binding for the purpose of the class.
+
 
 #### Requirement 2.
 We manage to change the position of the display message so it is located in a more suitable place. In the NUI `inventoryHud`, we needed to create a new JSON-object for the `UIText` widget toolTipText and add it to the existing content array in the inventoryHud.ui. The type of the content is relativeLayout, which means that the elements in the array are relative to each other. Therefore, we needed to add offset to each of the other elements in the array. For instance, we needed to add an offset of 3 from the TOP of the other widget `toolbar`. This works very well when the game screen/the window of the game is large or in full size, but it is not adjustable for smaller windows.
@@ -207,12 +206,17 @@ To make the `UIText` adjustable, we tried to use different JSON attributes and s
 
 The changes made in Requirement 2 are following the design-pattern for the Inventory module and the structure of the NUI in Terasology. The new `UIText` were implemented as an JSON-object in the existing NUI `inventoryHud`. The new class `InventoryText.java` followed the same structure and design as the `InventoryHud.java`. For instance, the class `InventoryText.java` extends from `CoreHudWidget` and uses the abstract method `initialise()` to initialise the new `UIText` widget. The new NUI had the same JSON structure as `healtHud.ui` and `inventoryText.ui`.
 
+
 #### Requirement 3.
 We manage to make the toolbar to appear if you select an item and then disappear after 2 seconds if no new item is selected. This was done by implementing an `AnimationThread` that monitors the condition of the player and sets the `UIText` to invisible after 2seconds. However, we did not have time to finalize the code and the toolbar so it cannot fade out. The function also contains a bug which makes the toolbar static sometime and out-of-synq with the players change of items. In order to solve this problem we have to modify the `AnimationThread` to be able to listen to calls at the same time as it is asleep. This could be solved by using reentrant locks and condition-variables to make the thread wait for a certain event.
 
 In order to make the toolbar fade we need to modify `UIText` and the `Lwjgl` shaders displaying the text to be able to support transparency fades. This is a huge task and we do not have time to implement changes to the core engine.
 
 The implementation of `AnimationtThread` works well with the design-pattern because they are using several threads to do different animation tasks. The problem with the implementation is that it is similar to a spin-lock (rapidly checking one condition) which can effect performance. This was not noted during test so we assumed the effect being minimal. The class is also following the design patter of having brackets of all loops and if-statments, and it uses an already existing class to produce the wanted result.
+
+The changes we made at the end:
+
+![UML](/images/UML_changes_1514.png)
 
 
 ## Requirements affected by functionality being refactored
