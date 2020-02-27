@@ -205,8 +205,9 @@ Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
-Same test results were obtained before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.  
-The patch was also marked as "Successful in 14m — No new or fixed alerts" by the CI server connected to the base Terasology repo on github, which confirms that the failing test cases are not related to the requirement being implemented. Test results (or logs) were saved before ([here](/test_reports/issue-3648-req-3/before-locally-develop-branch) - using `develop` branch) and after ([here](/test_reports/issue-3648-req-3/after-locally-RefetchControllersByClickingOnMenuButton-branch) - using `RefetchControllersByClickingOnMenuButton` branch) implementing the requirement.
+  * Same test results were obtained before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.  
+  * The patch was also marked as "Successful in 14m — No new or fixed alerts" by the CI server connected to the base Terasology repo on github, which confirms that the failing test cases are not related to the requirement being implemented.
+  * Test results (or logs) were saved before ([here](/test_reports/issue-3648-req-3/before-locally-develop-branch) - using `develop` branch) and after ([here](/test_reports/issue-3648-req-3/after-locally-RefetchControllersByClickingOnMenuButton-branch) - using `RefetchControllersByClickingOnMenuButton` branch) implementing the requirement.
 
 ## Patch/fix
 
