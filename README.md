@@ -190,8 +190,6 @@ Regarding the rest of the issue, the issue is very broad and is connected to oth
 
 However, it seems that some features are harder to implement if it is continued to use the same library **lwjgl**. One of these features is the automatic recognition of plugging and unplugging. It could be worth changing this library totally if this would offer more flexibility for the whole infrastructure.
 
----
-
 ## Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
 
 ### Requirements
@@ -250,7 +248,8 @@ The changes we made at the end:
 
 ## Requirements affected by functionality being refactored
 
-Optional (point 3): trace tests to requirements.
+* Issue [3648](https://github.com/MovingBlocks/Terasology/issues/3648) requirement 1 is tested in `testControllerButton`
+in `InputSystemTest`.
 
 ## Existing test cases relating to refactored code
 
@@ -259,9 +258,6 @@ No existing test cases were found for the three classes that were edited.
 
 ## Test results
 
-Overall results with link to a copy or excerpt of the logs (before/after
-refactoring).
-
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
   * Same test results were obtained before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.  
   * The patch was also marked as "Successful in 14m — No new or fixed alerts" by the CI server connected to the base Terasology repo on github, which confirms that the failing test cases are not related to the requirement being implemented.
@@ -269,35 +265,31 @@ refactoring).
 
 ## Patch/fix
 
-The fix can be copied or linked to (git diff).
-* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3 patch: [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838).
-* Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3,
+[PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): it is considered clean because changes were done in
+the code in a way that makes minimal changes to the design pattern of the whole project. The patch was marked as
+"Successful in 14m — No new or fixed alerts" by the CI server that is connected to the base Terasology repo on github.
+Moreover, same test results were obtained before and after implementing the requirement. The CI server results confirm
+that the failing test cases are not related to the requirement being implemented.  
 
-Optional (point 4): the patch is clean.
-* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): it is considered clean because changes were done in the code in a way that makes minimal changes to the design pattern of the whole project.
-* Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 1 & 2
+[PR](https://github.com/MovingBlocks/Terasology/pull/3839)
 
-Optional (point 5): considered for acceptance (passes all automated checks).
-* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): the patch was marked as "Successful in 14m — No new or fixed alerts" by the CI server that is connected to the base Terasology repo on github. Moreover, same test results were obtained before and after implementing the requirement. The CI server results confirm that the failing test cases are not related to the requirement being implemented.  
-
-* Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
-
-
----
+* Not a pull-request but an example on how it should look like.
+[Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch:
+[Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
 
 ## Effort spent
 
-For each team member, how much time was spent in
+### 1. plenary discussions/meetings
 
-1. plenary discussions/meetings;
+1 hour in total for each student
 
-1 hour in total for each student ??
-
-2. discussions within parts of the group;
+### 2. discussions within parts of the group
 
 30 min to 1 hour in total for each student?? or none??
 
-3. reading documentation;
+### 3. reading documentation
 
 `Marcus`:
 * 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading
@@ -315,7 +307,7 @@ About 4-5 hours in total including reading documentation. A lot of documentation
 * Even reading and seeing videos about Intellij to know how to navigate in a better way through the project.
 * Even looking up some things about UML to draw UML of the changes done in the project.
 
-4. configuration and setup;
+### 4. configuration and setup
 
 `Marcus`:
 * 7h, alot of projects where attempted which are listed bellow:
@@ -331,7 +323,7 @@ About 4-5 hours. The following was tried:
 
 * Second, [Terasology project](https://github.com/MovingBlocks/Terasology) was tried. We had problems with this project as well in lab 3. There was some documentation missing in the README.me of the [Terasology project](https://github.com/MovingBlocks/Terasology) about running `gradlew jar` before running `gradlew game`, which lead to problems. Also, there was no success in trying to run the game fully from Intellij. It could only run fully from the terminal. Intellij could only be used for debugging purposes. Discovering `gradlew jar` and knowing the exact order of running `gradlew` commands took some time.
 
-5. analyzing code/output;
+### 5. analyzing code/output
 
 `Marcus`:
 * 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the
@@ -341,7 +333,7 @@ solution should be implemented.
 
 See question 8.
 
-6. writing documentation;
+### 6. writing documentation
 
 `Marcus`:
 * 7 h Wrote documentation to InventoryHud.java, animation thread and in the test class TestInventoryHud.java.
@@ -357,7 +349,7 @@ About 4-5 hours. The following was done:
 * Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1) of requirement 3 for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), and detailed Commit message for the PR.
 * Writing code documentation in class `LwjglInput`.
 
-7. writing code;
+### 7. writing code
 
 `Marcus`:
 * 8 hours were spent on adding support for adjusting location on tooltipbar and added functionality that the toolbar diapper after 2seconds and reapper if item is switched.
@@ -367,7 +359,7 @@ This was a bit hard to get to work with the original code.
 
 See question 8.
 
-8. running code?
+### 8. running code
 
 `Marcus`:
 
@@ -386,16 +378,8 @@ About 10-11 hours in total of analyzing code, writing code, and running code. Fo
 
 * Re-running the unit tests takes some time, which slowed the process re-running the tests a little bit.
 
-For setting up tools and libraries (step 4), enumerate all dependencies
-you took care of and where you spent your time, if that time exceeds
-30 minutes.
-
 ## Overall experience
 
 * What are your main take-aways from this project? What did you learn?
 
 Learning how to contribute to an open-source project, and navigate through code that is not fully documented.
-
-* Optional (point 6): How would you put your work in context with best software engineering practice?
-
-* Optional (point 7): Is there something special you want to mention here?
