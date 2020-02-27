@@ -49,6 +49,7 @@ Each module in Terasology follow a specific structure and include:
     * prefabs
     * sounds
 * src
+    * java 
     * tests (not all of them)
 
 The modules need to have a namespace that fits the pattern org.terasology.<nameOfModule>, because otherwise it might not be build or loaded as expected.
