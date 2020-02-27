@@ -16,6 +16,7 @@ After assignment 3, we all wanted to change project because we had a lot of prob
 Terasology is large project with 170k LOC. It is not feasible to understand all of its system in a project of this scale.
 We have however taken a deeper look into some of its systems.
 
+
 ### [Modules](https://github.com/MovingBlocks/Terasology/blob/develop/docs/Modules.md)
 Modules simply include everything that is not game engine. They include e.g. game content, gameplay mechanics.
 
@@ -237,12 +238,17 @@ refactoring).
 
 The fix can be copied or linked to (git diff).
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3 patch: [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838).
+* Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
 
 Optional (point 4): the patch is clean.
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): it is considered clean because changes were done in the code in a way that makes minimal changes to the design pattern of the whole project.
+* Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
 
 Optional (point 5): considered for acceptance (passes all automated checks).
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): the patch was marked as "Successful in 14m — No new or fixed alerts" by the CI server that is connected to the base Terasology repo on github. Moreover, same test results were obtained before and after implementing the requirement. The CI server results confirm that the failing test cases are not related to the requirement being implemented.  
+
+* Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
+
 
 ---
 
@@ -305,9 +311,10 @@ See question 8.
 6. writing documentation;
 
 `Marcus`:
-* Wrote documentation to InventoryHud.java and and animation thread.
-* Wrote documentation about workflow and added images.
-* TODO
+* 7 h Wrote documentation to InventoryHud.java, animation thread and in the test class TestInventoryHud.java.
+* Wrote documentation about workflow, requirements for issue 1514 and added images.
+* Wrote patch documentation.
+* Contributed to README.md
 
 `George`:
 
