@@ -101,6 +101,7 @@ After we re-used and implemented some of the code from an old PR (that the commu
 
 ### Workflow
 Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before. Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
+By adding functionality to the InventoryHud.java and inventoryHud.ui we can keep the original workflow and create the desired functions.
 
 #### Requirement 1.
 After we had understood the architecture related to this issue and got some help from one of the members in the Terasology community, we managed to implement some of the old code from an PR from 2018. By doing that, we were able to display the name of the current tooltip and make it change whenever we switch slots from 0...9. The affected classes were InventoryHud.java and the NUI inventoryHud.ui.
@@ -109,6 +110,16 @@ After we had understood the architecture related to this issue and got some help
 We manage to change the position of the display message, by changing the offset of the display message related to the crosshair and the toolbar at the bottom. However,
 
 #### Requirement 3.
+We manage to make the toolbar to appear if you select an item and then disappear after 2 seconds if no new item is selected. However, we did not have time to finalize the code and the toolbar so it cannot fade out. 
+The function also contains a bug which makes the toolbar static sometime and out-of-synq with the players change of items. In order to solve this problem we have to modify the animationthread to be able to
+listen to calls at the same time as it is asleep. This could be solved by using reentrant locks and condition-variables to make the thread wait for a certain event. 
+
+In order to make the toolbar fade we need to modify UIText and the Lwjgl shaders displaing the text to be able to support transparency fades. This is a huge task and we do not have time to implement chnages to the core engine.
+
+The implementation of AnimationtThread works well with the design-pattern because they are using several threads to do different animation tasks. The problem
+with the implementation is that it is similar to a spin-lock (rapidly checking one condition) which can effect performance. This was not noted during test so we assumed
+the effect being minimal. The class is also following the design patter of having brackets of all loops and if-statments, and it uses an already existing class to 
+produce the wanted result.
 
 
 ### Project plan
