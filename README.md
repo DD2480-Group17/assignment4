@@ -139,17 +139,21 @@ Some notes:
 
 * It was hard to write unit tests because it was hard to simulate plugging and unplugging the controller.
 
-UML over that changes follows:
+UML over that changes done to fulfill requirement 3 follows:
 ![UML](/images/uml1.jpg)
 
-##### Plan to continue working with the requirement and the issue in general
+#### Requirement 4
+Not solved due to time limitation.
+
+#### Plan to continue working with the requirement and the issue in general
 In order to complete working on requirement 4, the following is needed:
 * Need to implement and test for other operating systems (e.g. linux and macOS) and other types of controllers.
 * Need unit tests.
 * Need to have a way to not need the "Refresh Controllers" totally. Maybe JNI is a good option. Or move "Refresh Controllers" button to be in "Controller Settings" menu instead.
 
-#### Requirement 4
-Not solved due to time limitations.
+Regarding the rest of the issue, the issue is very broad and is connected to other issues such as ([issue #2125](https://github.com/MovingBlocks/Terasology/issues/2125)), and has a lot of features that could be added and are related to this issue. One could continue by building upon what was already done by implementing new feature such as Requirement 4 here, and looking at the related issues.
+
+However, it seems that some features are harder to implement if it is continued to use the same library **lwjgl**. One of these features is the automatic recognition of plugging and unplugging. It could be worth changing this library totally if this would offer more flexibility for the whole infrastructure.
 
 ---
 
@@ -195,7 +199,8 @@ Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
-Same test results before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.
+Same test results were obtained before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.  
+The patch was also marked as "Successful in 14m — No new or fixed alerts" by the CI server connected to the base Terasology repo on github, which confirms that the failing test cases are not related to the requirement being implemented. Test results (or logs) were saved before ([here](/test_reports/issue-3648-req-3/before-locally-develop-branch) - using `develop` branch) and after ([here](/test_reports/issue-3648-req-3/after-locally-RefetchControllersByClickingOnMenuButton-branch) - using `RefetchControllersByClickingOnMenuButton` branch) implementing the requirement.
 
 ## Patch/fix
 
@@ -206,7 +211,7 @@ Optional (point 4): the patch is clean.
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): it is considered clean because changes were done in the code in a way that makes minimal changes to the design pattern of the whole project.
 
 Optional (point 5): considered for acceptance (passes all automated checks).
-* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): passed all CI tests on github.
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): the patch was marked as "Successful in 14m — No new or fixed alerts" by the CI server that is connected to the base Terasology repo on github. Moreover, same test results were obtained before and after implementing the requirement. The CI server results confirm that the failing test cases are not related to the requirement being implemented.  
 
 ---
 
