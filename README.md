@@ -49,7 +49,7 @@ Each module in Terasology follow a specific structure and include:
     * prefabs
     * sounds
 * src
-    * java 
+    * java
     * tests (not all of them)
 
 The modules need to have a namespace that fits the pattern org.terasology.<nameOfModule>, because otherwise it might not be build or loaded as expected.
@@ -231,6 +231,9 @@ We manage to change the position of the display message so it is located in a mo
 To make the `UIText` adjustable, we tried to use different JSON attributes and search for similar cases in the other NUI files, but did not find any good solution for it. To make the display message adjustable, we think we will need to create a new NUI like the NUI `healtHud` (the hearts above the toolbar). The hearts are always an offset of 60 from the bottom of the window, and not related to any other widget in the game. If we add the toolTipText to the content array in inventoryHud.ui, the display message will be in the middle of the other two widgets, which makes it difficult to set a offset that will be accurate for both of them at the same time if we resize the game window. We created a class `InventoryText.java` and moved all the code from the `InventoryHud.java` which were related to the toolTipText and the animation of it. We also created a new NUI called `inventoryText.ui`. However, we did not manage to make it appear in the game, even if we used the guide for creating and changing NUI in Terasology. We will probably need a couple of more hours to make the new NUI appear properly in Terasology.
 
 The changes made in Requirement 2 are following the design-pattern for the Inventory module and the structure of the NUI in Terasology. The new `UIText` were implemented as an JSON-object in the existing NUI `inventoryHud`. The new class `InventoryText.java` followed the same structure and design as the `InventoryHud.java`. For instance, the class `InventoryText.java` extends from `CoreHudWidget` and uses the abstract method `initialise()` to initialise the new `UIText` widget. The new NUI had the same JSON structure as `healtHud.ui` and `inventoryText.ui`.
+
+
+![UIText1514](/images/UItext1514.png)
 
 
 #### Requirement 3.
