@@ -36,10 +36,19 @@ to the same event they will be called in the order given by the priority attribu
 methods can consume the event, which can be useful to communicate to lower priority methods whether or not the event
 has been processed or not.
 
-## relation to design pattern(s).
+## Relation to design patterns
 
 ### Controller button rebinding with events
-Todo: discuss `ControllerButtonEvent` in relation the the event system
+The bind system already had functionality to rebind controller buttons, but yet nothing happened when you actually tried
+to rebind a controller button. The reason for this was that the bind system was never informed that a controller
+button was pressed. This was solved by creating a `ControllerButtonEvent`, which extends the existing class
+`ButtonEvent`. Terasology uses this class for mouse and key events among others, so the `ControllerButtonEvent` follows
+the same design pattern.
+
+The event processing method to handle `ControllerButtonEvent` is placed in `NUIManagerInternal`, which already has event
+processing methods for `KeyEvent` and others. This request is then sent to `UIInputBind`, which is the UI component
+responsible for updating the button with the controller button that was just pressed. This follows the same design
+pattern used for handling `KeyEvent` and others.
 
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
