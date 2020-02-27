@@ -7,9 +7,13 @@ URL: [Terasology GitHub](https://github.com/MovingBlocks/Terasology)
 
 One or two sentences describing it
 
+---
+
 ## Onboarding experience
 
 After assignment 3, we all wanted to change project because we had a lot of problems with setting up the project correctly. First, we tried to set up the OSS SirixDB. However, we did not manage to do that properly even when we asked for help from the teaching assistants. After a couple of hours without any success, we decided to go back to the OSS Terasology again. We felt that we did not have time to spend on the set up anymore, and some of the features in Terasology worked before during assignment 3. We found a more detailed description of how to set up Terasology, which we used this time. Now everything works as it should according to the documentation for Terasology.
+
+---
 
 ## UML class diagram and its description
 
@@ -17,12 +21,16 @@ Optional (point 1): Architectural overview.
 
 Optional (point 2): relation to design pattern(s).
 
+---
+
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
 This issue has already had some work on it, as seen in [PR #3705](https://github.com/MovingBlocks/Terasology/pull/3705).
 It does not resolve the entire issue however, and so we will continue work on the issue with the PR as a starting point.
 
-### Requirements for Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
+---
+
+### Requirements
 This issue had a large scope of changes and was open for interpretation. Therefore, we came up with the following concrete requirements.
 
 #### 1. Rebinding: Implement rebinding of controller buttons
@@ -36,53 +44,22 @@ The speed when rotating the camera with the controller is very slow, to the poin
 An axis sensitivity slider for each controller axis should be added to the controller settings page. This setting should
 control the camera rotation speed.
 
-#### 3. Implement menu navigation with controller
-Currently, even when the controller is connected and working, it cannot be used to navigate through the menu. One has to use mouse or keyboard to navigate through the menu. That is why the requirement is about making the controller able to do that.
-
-#### 4. Handle detection of plugging in and out controllers
+#### 3. Handle detection of plugging in and out controllers
 Right now, when a controller is connected to a computer, one has to close the game and start it again for the controller to be recognized. The requirement is about making the game recognize the controller without re-starting it.
 
-## Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
-
-### Requirements
-
-#### 1. Display the name of the tooltip when switching tooltip
-Currently, the Terasology only has a toolbar where you can see the available tooltips and if you hover them you see the name of the toolbar. The community of Terasology now wants a small display that shows the name of the tooltip when you switch slots from 0...9.
-
-#### 2. Fix the location of the display message
-After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the location of the display was not adjustable relative to the screen.
-
-#### 3. Fade the display after a couple of seconds if we don't switch tooltip
-After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
-
----
-
-### Project plan
-
-To be able to fulfill the requirements we need to:
-* Read necessary documentation from Terasology such as wikis for NUI and Modules
-* Import and implement the module Inventory to our local Terasology.
-* Modify the NUI inventoryHud.ui to display the name of the item at a correct place at the screen.
-* Modify the class InventoryHud.java to be enable to fading text.
-* Try to create tests or modify existing test for the changes we will made.
+#### 4. Implement menu navigation with controller
+Currently, even when the controller is connected and working, it cannot be used to navigate through the menu. One has to use mouse or keyboard to navigate through the menu. That is why the requirement is about making the controller able to do that. (Not solved due to time limitations).
 
 ---
 
 ### Workflow
-#### Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
 
-Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before.
-Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we
-corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
-
-#### Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 ##### Requirement 1
 
-##### Requirement 2
+#### Requirement 2
 
-##### Requirement 3
+#### Requirement 3
 
-##### Requirement 4
 To handle automatic recognition of the controller on connecting and disconnecting it while the game was running, different methods were looked up. Moreover, there is a comment in the code that says that the **lwjgl** library has the interface for such a functionality. However, this interface has no implementation.
 
 Furthermore, the method for discovering the controllers that are connected has a limited functionality in that the method does not allow you to poll for **changes** in the list of the connected controllers on **all** the well-known operating systems after the game had already been started. However, the library allows to poll the list of the connected controllers when the game is started and this list is fixed regardless of whether some changes in the controllers connection happen during the game.
@@ -104,35 +81,68 @@ The changes that were done were the following:
 Some notes:
 * Re-polling the list of connected controllers works only for windows 10 for now due to the limitation of the **lwjgl** library as mentioned above.
 
-* It was hard to write unit tests because **lwjgl** library native files needed to be loaded, and this was done in other classes in a way that made it hard to do such a task without changing the infrastructure of the code.
+* It was hard to write unit tests because it was hard to simulate plugging and unplugging the controller.
 
 UML over that changes follows:
 ![UML](/images/uml1.jpg)
 
-### Requirements affected by functionality being refactored
+#### Requirement 4
+Not solved due to time limitations.
+
+---
+
+## Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
+
+### Requirements
+
+#### 1. Display the name of the tooltip when switching tooltip
+Currently, the Terasology only has a toolbar where you can see the available tooltips and if you hover them you see the name of the toolbar. The community of Terasology now wants a small display that shows the name of the tooltip when you switch slots from 0...9.
+
+#### 2. Fix the location of the display message
+After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the location of the display was not adjustable relative to the screen.
+
+#### 3. Fade the display after a couple of seconds if we don't switch tooltip
+After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
+
+### Workflow
+Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before. Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
+
+### Project plan
+
+To be able to fulfill the requirements we need to:
+* Read necessary documentation from Terasology such as wikis for NUI and Modules
+* Import and implement the module Inventory to our local Terasology.
+* Modify the NUI inventoryHud.ui to display the name of the item at a correct place at the screen.
+* Modify the class InventoryHud.java to be enable to fading text.
+* Try to create tests or modify existing test for the changes we will made.
+
+## Requirements affected by functionality being refactored
 
 Optional (point 3): trace tests to requirements.
 
-### Existing test cases relating to refactored code
+## Existing test cases relating to refactored code
 
-* Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 4:  
+* Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
 No existing test cases were found for the three classes that were edited.
 
-### Test results
+## Test results
 
 Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
-* Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 4:  
+* Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
 Same test results before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.
 
-### Patch/fix
+## Patch/fix
 
 The fix can be copied or linked to (git diff).
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3 patch: [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838).
 
 Optional (point 4): the patch is clean.
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): it is considered clean because changes were done in the code in a way that makes minimal changes to the design pattern of the whole project.
 
 Optional (point 5): considered for acceptance (passes all automated checks).
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): passed all CI tests on github.
 
 ## Effort spent
 
@@ -148,7 +158,12 @@ For each team member, how much time was spent in
 
 3. reading documentation;
 
-George:
+`Marcus`:
+* 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading
+documentation about Terasology.
+
+
+`George`:
 About 4-5 hours in total including reading documentation. A lot of documentation, tutorials and information about projects, issues, pull requests were read. Following is a summary:
 * Docker.
 * Gradle.
@@ -160,7 +175,14 @@ About 4-5 hours in total including reading documentation. A lot of documentation
 
 4. configuration and setup;
 
-George:
+`Marcus`:
+* 7h, alot of projects where attempted which are listed bellow:
+* [SirixDB project](https://github.com/sirixdb/sirix), Updated to Java 13, updated to Gradle 6, nothing worked to get the program to work with CMD on Windows or Intellj. The project
+could not find the variable var which should be included in Java 13. Thee problem where not solved and abandoned because all group members had different issues.
+* Teasology took time to set up, it did not work with Intellij and I needed to downgrade to Java 1.8. After several hours bug fixing the following sequence enables the game
+to be executed from CMD. gradlew, gradlew jar game, without jar bug's appeared in the game.
+
+`George`:
 About 4-5 hours. The following was tried:
 * First [SirixDB project](https://github.com/sirixdb/sirix) was tried. I installed Docker and gradle on linux VM on my computer (I have Windows) and tried to run the docker image of `SirixDB project`. However, it did not succeed. This needed reading about docker and gradle before actually doing the installation steps.
 
@@ -168,25 +190,42 @@ About 4-5 hours. The following was tried:
 
 5. analyzing code/output;
 
-George:
+`Marcus`:
+* 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the
+solution should be implemented.
+
+`George`:
 See question 8.
 
 6. writing documentation;
 
-George:
+`Marcus`:
+* Wrote documentation to InventoryHud.java and and animation thread.
+* Wrote documentation about workflow and added images.
+* TODO
+
+`George`:
 About 3-4 hours. The following was done:
 * Contribution to README.md file.
 * UML took some time to draw manually.
-* Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1) of requirement 4 for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), and detailed Commit message for the PR.
+* Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1) of requirement 3 for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), and detailed Commit message for the PR.
 
 7. writing code;
 
-George:
+`Marcus`:
+* 8 hours were spent on adding support for adjusting location on tooltipbar and added functionality that the toolbar diapper after 2seconds and reapper if item is switched.
+This was a bit hard to get to work with the original code.
+
+`George`:
 See question 8.
 
 8. running code?
 
-George:
+`Marcus`:
+
+* see question 8 and 5, running code where included there.
+
+`George`:
 
 About 9-10 hours in total of analyzing code, writing code, and running code. Following are more details:
 * Writing code to add the function of the requirement. The design of the code was changed iteratively to make changes the do not break the design pattern of the project as much as possible. This was hard because there is not much documentation on how most of the classes in the project should be used.
