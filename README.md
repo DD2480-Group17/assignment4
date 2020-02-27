@@ -13,12 +13,42 @@ One or two sentences describing it
 After assignment 3, we all wanted to change project because we had a lot of problems with setting up the project correctly. First, we tried to set up the OSS SirixDB. However, we did not manage to do that properly even when we asked for help from the teaching assistants. After a couple of hours without any success, we decided to go back to the OSS Terasology again. We felt that we did not have time to spend on the set up anymore, and some of the features in Terasology worked before during assignment 3. We found a more detailed description of how to set up Terasology, which we used this time. Now everything works as it should according to the documentation for Terasology.
 
 
-## UML class diagram and its description
+## Architectural overview
+Terasology is large project with 170k LOC. It is not feasible to understand all of its system in a project of this scale.
+We have however taken a deeper look into some of its systems.
 
-Optional (point 1): Architectural overview.
+### [Events](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems)
+Terasology's event system can send events to entities. Event processing methods can be annotated with `@ReceiveEvent`
+to be called every time an event is sent.
 
-Optional (point 2): relation to design pattern(s).
+Event processing methods must have the following method signature (From [Terasology wiki](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems#processing-events)):
+* They must have a `@ReceiveEvent` annotation
+* They must be public
+* The type of the first argument must implement `Event`
+* The second argument must be of type `EntityRef`
+* The rest of the arguments (if there are any) must implement `Component`
 
+To define an event you extend the `Event` class and make every field private, but accessible via getters and a
+constructor that supplies every field.
+
+A priority attribute can be added to the `@ReceiveEvent` annotation. If several event processing methods are listening
+to the same event they will be called in the order given by the priority attributes. Additionally, event processing
+methods can consume the event, which can be useful to communicate to lower priority methods whether or not the event
+has been processed or not.
+
+## Relation to design patterns
+
+### Controller button rebinding with events
+The bind system already had functionality to rebind controller buttons, but yet nothing happened when you actually tried
+to rebind a controller button. The reason for this was that the bind system was never informed that a controller
+button was pressed. This was solved by creating a `ControllerButtonEvent`, which extends the existing class
+`ButtonEvent`. Terasology uses this class for mouse and key events among others, so the `ControllerButtonEvent` follows
+the same design pattern.
+
+The event processing method to handle `ControllerButtonEvent` is placed in `NUIManagerInternal`, which already has event
+processing methods for `KeyEvent` and others. This request is then sent to `UIInputBind`, which is the UI component
+responsible for updating the button with the controller button that was just pressed. This follows the same design
+pattern used for handling `KeyEvent` and others.
 
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
@@ -49,9 +79,46 @@ Currently, even when the controller is connected and working, it cannot be used 
 
 ### Workflow
 
-##### Requirement 1
+#### Requirement 1
+Input settings now allow controller buttons to be bound to actions in the same way as key and mouse input previously was.
+
+This was done by creating a `ControllerButtonEvent`, which is sent to the event handling system in
+`processControllerInput` via `sendControllerButtonEvent` inside `InputSystem`. Some additions in `JInputControllerDevice`
+and `EventCopier` were required to facilitate the event. The event was then handled in
+`NUIManagerInternal.controllerButtonEvent` and sent to `UIInputBind.onControllerButtonEvent` to do the binding.
+
+There was an issue with one button that wouldn't work, and after some debugging that lead me into decompiled .class
+files it turned out that the start-button on an XBOX 360 controller is actually not a button, but a key. This was easily
+fixed when discovered.
+
+Additionally, there was an attempt to allow binding of controller axises, but it is not yet finished. It was implemented
+similarly to buttons, but did not work as expected due to how the bindings were created between actions and input. Some
+actions, such as `forwardsMovement`, which was responsible for moving the character forwards, has a duplicate version
+called `forwardsRealMovement`, which is responsible for handling controller input. The reason that these exist, and
+simply aren't bound the same way as keys, is that these have a single binding for forwards and backwards, whilst the
+key bindings consist of two bindings. There was no translation between these bindings available. Furthermore, the
+input settings page did not display the singly bounded actions, such as `forwardsRealMovement`, and plainly adding them
+in the list would be confusing to the user, since there would be duplicate bindings available for many actions.
+
+Large parts of these functionalities rely on user input, and are thus difficult to test. The controller button event was
+however tested in `InputSystemTest`.
 
 #### Requirement 2
+A setting for controller axis sensitivity was added to the controller settings page for each axis. Axis names
+were made understandable. POV axis (D-pad) was removed, since it functions like a button.
+
+The GUI changes were made in `addAxis` and `addInputSection`, inside `ControllerSettingsScreen`. The  slider was bound to the
+property value `sensitivity` in `Axis`. Axis ids such as `rx` were mapped to proper names such as `Right Joystick X-Axis`
+in `axisMap` in `ControllerConfig`.
+
+##### Before & After
+<img src="/images/controller-settings-before.png" width="420"> <img src="/images/controller-settings-after.png" width="420">
+
+##### Requirement 1 & 2 UML
+
+![](/images/uml-controller-settings.png)
+
+
 
 #### Requirement 3
 
@@ -78,11 +145,21 @@ Some notes:
 
 * It was hard to write unit tests because it was hard to simulate plugging and unplugging the controller.
 
-UML over that changes follows:
+UML over that changes done to fulfill requirement 3 follows:
 ![UML](/images/uml1.jpg)
 
 #### Requirement 4
-Not solved due to time limitations.
+Not solved due to time limitation.
+
+#### Plan to continue working with the requirement and the issue in general
+In order to complete working on requirement 4, the following is needed:
+* Need to implement and test for other operating systems (e.g. linux and macOS) and other types of controllers.
+* Need unit tests.
+* Need to have a way to not need the "Refresh Controllers" totally. Maybe JNI is a good option. Or move "Refresh Controllers" button to be in "Controller Settings" menu instead.
+
+Regarding the rest of the issue, the issue is very broad and is connected to other issues such as ([issue #2125](https://github.com/MovingBlocks/Terasology/issues/2125)), and has a lot of features that could be added and are related to this issue. One could continue by building upon what was already done by implementing new feature such as Requirement 4 here, and looking at the related issues.
+
+However, it seems that some features are harder to implement if it is continued to use the same library **lwjgl**. One of these features is the automatic recognition of plugging and unplugging. It could be worth changing this library totally if this would offer more flexibility for the whole infrastructure.
 
 ---
 
@@ -150,7 +227,9 @@ Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
-Same test results before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.
+  * Same test results were obtained before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.  
+  * The patch was also marked as "Successful in 14m — No new or fixed alerts" by the CI server connected to the base Terasology repo on github, which confirms that the failing test cases are not related to the requirement being implemented.
+  * Test results (or logs) were saved before ([here](/test_reports/issue-3648-req-3/before-locally-develop-branch) - using `develop` branch) and after ([here](/test_reports/issue-3648-req-3/after-locally-RefetchControllersByClickingOnMenuButton-branch) - using `RefetchControllersByClickingOnMenuButton` branch) implementing the requirement.
 
 ## Patch/fix
 
@@ -161,7 +240,7 @@ Optional (point 4): the patch is clean.
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): it is considered clean because changes were done in the code in a way that makes minimal changes to the design pattern of the whole project.
 
 Optional (point 5): considered for acceptance (passes all automated checks).
-* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): passed all CI tests on github.
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): the patch was marked as "Successful in 14m — No new or fixed alerts" by the CI server that is connected to the base Terasology repo on github. Moreover, same test results were obtained before and after implementing the requirement. The CI server results confirm that the failing test cases are not related to the requirement being implemented.  
 
 ---
 
@@ -185,6 +264,7 @@ documentation about Terasology.
 
 
 `George`:
+
 About 4-5 hours in total including reading documentation. A lot of documentation, tutorials and information about projects, issues, pull requests were read. Following is a summary:
 * Docker.
 * Gradle.
@@ -204,8 +284,9 @@ could not find the variable var which should be included in Java 13. Thee proble
 to be executed from CMD. gradlew, gradlew jar game, without jar bug's appeared in the game.
 
 `George`:
+
 About 4-5 hours. The following was tried:
-* First [SirixDB project](https://github.com/sirixdb/sirix) was tried. I installed Docker and gradle on linux VM on my computer (I have Windows) and tried to run the docker image of `SirixDB project`. However, it did not succeed. This needed reading about docker and gradle before actually doing the installation steps.
+* First [SirixDB project](https://github.com/sirixdb/sirix) was tried. I installed Docker, gradle and Java JDK 13 on linux VM on my computer (I have Windows) and tried to run the docker image of `SirixDB project`. However, it did not succeed. This needed reading about docker and gradle before actually doing the installation steps.
 
 * Second, [Terasology project](https://github.com/MovingBlocks/Terasology) was tried. We had problems with this project as well in lab 3. There was some documentation missing in the README.me of the [Terasology project](https://github.com/MovingBlocks/Terasology) about running `gradlew jar` before running `gradlew game`, which lead to problems. Also, there was no success in trying to run the game fully from Intellij. It could only run fully from the terminal. Intellij could only be used for debugging purposes. Discovering `gradlew jar` and knowing the exact order of running `gradlew` commands took some time.
 
@@ -216,6 +297,7 @@ About 4-5 hours. The following was tried:
 solution should be implemented.
 
 `George`:
+
 See question 8.
 
 6. writing documentation;
@@ -226,10 +308,12 @@ See question 8.
 * TODO
 
 `George`:
-About 3-4 hours. The following was done:
+
+About 4-5 hours. The following was done:
 * Contribution to README.md file.
 * UML took some time to draw manually.
 * Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1) of requirement 3 for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), and detailed Commit message for the PR.
+* Writing code documentation in class `LwjglInput`.
 
 7. writing code;
 
@@ -238,6 +322,7 @@ About 3-4 hours. The following was done:
 This was a bit hard to get to work with the original code.
 
 `George`:
+
 See question 8.
 
 8. running code?

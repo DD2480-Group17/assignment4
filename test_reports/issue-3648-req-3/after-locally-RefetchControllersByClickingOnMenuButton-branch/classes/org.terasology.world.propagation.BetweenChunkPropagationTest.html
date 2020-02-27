@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BetweenChunkPropagationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BetweenChunkPropagationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.terasology.world.propagation.html">org.terasology.world.propagation</a> &gt; BetweenChunkPropagationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.393s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testBetweenChunksSimple()</td>
+<td class="success">0.348s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testBetweenChunksSimpleSunlightRegenOnly()</td>
+<td class="success">0.263s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testBetweenChunksWithOverhang()</td>
+<td class="success">0.397s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPropagateSunlightAppearingMidChunk()</td>
+<td class="success">0.385s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>19:51:28.824 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+19:51:28.827 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+19:51:28.832 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+19:51:28.833 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+19:51:28.833 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+19:51:28.837 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+19:51:28.837 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+19:51:28.837 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+19:51:28.837 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+19:51:30.747 [Test worker] INFO  o.t.w.c.b.ExtraBlockDataManager - Extra data slots registered:
+19:51:31.087 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:stone]
+19:51:31.091 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:stone with id 1
+19:51:31.111 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:air]
+19:51:31.111 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:air with id 2
+19:51:31.518 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:stone]
+19:51:31.518 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:stone with id 1
+19:51:31.520 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:air]
+19:51:31.520 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:air with id 2
+19:51:31.846 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:stone]
+19:51:31.846 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:stone with id 1
+19:51:31.850 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:air]
+19:51:31.850 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:air with id 2
+19:51:32.229 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:stone]
+19:51:32.229 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:stone with id 1
+19:51:32.232 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered BlockFamily[symmetric,engine:air]
+19:51:32.232 [Test worker] INFO  o.t.w.b.internal.BlockManagerImpl - Registered Block engine:air with id 2
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.10.3</a> at Feb 27, 2020 7:51:41 PM</p>
+</div>
+</div>
+</body>
+</html>
