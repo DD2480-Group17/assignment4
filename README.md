@@ -13,12 +13,33 @@ One or two sentences describing it
 After assignment 3, we all wanted to change project because we had a lot of problems with setting up the project correctly. First, we tried to set up the OSS SirixDB. However, we did not manage to do that properly even when we asked for help from the teaching assistants. After a couple of hours without any success, we decided to go back to the OSS Terasology again. We felt that we did not have time to spend on the set up anymore, and some of the features in Terasology worked before during assignment 3. We found a more detailed description of how to set up Terasology, which we used this time. Now everything works as it should according to the documentation for Terasology.
 
 
-## UML class diagram and its description
+## Architectural overview
+Terasology is large project with 170k LOC. It is not feasible to understand all of its system in a project of this scale.
+We have however taken a deeper look into some of its systems.
 
-Optional (point 1): Architectural overview.
+### [Events](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems)
+Terasology's event system can send events to entities. Event processing methods can be annotated with `@ReceiveEvent`
+to be called every time an event is sent.
 
-Optional (point 2): relation to design pattern(s).
+Event processing methods must have the following method signature (From [Terasology wiki](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems#processing-events)):
+* They must have a `@ReceiveEvent` annotation
+* They must be public
+* The type of the first argument must implement `Event`
+* The second argument must be of type `EntityRef`
+* The rest of the arguments (if there are any) must implement `Component`
 
+To define an event you extend the `Event` class and make every field private, but accessible via getters and a
+constructor that supplies every field.
+
+A priority attribute can be added to the `@ReceiveEvent` annotation. If several event processing methods are listening
+to the same event they will be called in the order given by the priority attributes. Additionally, event processing
+methods can consume the event, which can be useful to communicate to lower priority methods whether or not the event
+has been processed or not.
+
+## relation to design pattern(s).
+
+### Controller button rebinding with events
+Todo: discuss `ControllerButtonEvent` in relation the the event system
 
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
