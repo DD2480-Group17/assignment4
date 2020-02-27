@@ -69,7 +69,7 @@ The changes that were done were the following:
 Some notes:
 * Re-polling the list of connected controllers works only for windows 10 for now due to the limitation of the **lwjgl** library as mentioned above.
 
-* It was hard to write unit tests because **lwjgl** library native files needed to be loaded, and this was done in other classes in a way that made it hard to do such a task without changing the infrastructure of the code.
+* It was hard to write unit tests because it was hard to simulate plugging and unplugging the controller.
 
 UML over that changes follows:
 ![UML](/images/uml1.jpg)
