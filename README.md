@@ -110,7 +110,7 @@ After we had understood the architecture related to this issue and got some help
 We manage to change the position of the display message, by changing the offset of the display message related to the crosshair and the toolbar at the bottom. However,
 
 #### Requirement 3.
-We manage to make the toolbar to appear if you select an item and then disappear after 2 seconds if no new item is selected. However, we did not have time to finalize the code and the toolbar so it cannot fade out. 
+We manage to make the toolbar to appear if you select an item and then disappear after 2 seconds if no new item is selected. This was done by implementing an `AnimationThread` that monitors the condition of the player and sets the `UIText` to invisible after 2seconds. However, we did not have time to finalize the code and the toolbar so it cannot fade out. 
 The function also contains a bug which makes the toolbar static sometime and out-of-synq with the players change of items. In order to solve this problem we have to modify the animationthread to be able to
 listen to calls at the same time as it is asleep. This could be solved by using reentrant locks and condition-variables to make the thread wait for a certain event. 
 
