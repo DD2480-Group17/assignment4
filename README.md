@@ -383,3 +383,11 @@ About 10-11 hours in total of analyzing code, writing code, and running code. Fo
 * What are your main take-aways from this project? What did you learn?
 
 Learning how to contribute to an open-source project, and navigate through code that is not fully documented.
+
+### Interaction with Terasology community
+
+We had a great experience interacting with the Terasology community! We joined their Discord server, which was very
+active with development discussions. We told them we were interested in working with their project and got a few tips
+and hints to get started. At one point I came upon an implementation detail which I did not understand why it was
+implemented the way it was. Within minutes, I had two different people trying to help me out, one of which was the
+one who half a year earlier had created the issue I was currently working on.
