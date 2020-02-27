@@ -99,6 +99,15 @@ After we re-used and implemented some of the code from an old PR (that the commu
 #### 3. Fade the display after a couple of seconds if we don't switch tooltip
 After we re-used and implemented some of the code from an old PR (that the community of Terasology closed 2018) we saw that the display does not fade after a time, which would be nice because otherwise it might affect or disturb the player.
 
+### Project plan
+
+To be able to fulfill the requirements we need to:
+* Read necessary documentation from Terasology such as wikis for NUI and Modules
+* Import and implement the module Inventory to our local Terasology.
+* Modify the NUI inventoryHud.ui to display the name of the item at a correct place at the screen.
+* Modify the class InventoryHud.java to be enable to fading text.
+* Try to create tests or modify existing test for the changes we will made.
+
 ### Workflow
 Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before. Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
 By adding functionality to the InventoryHud.java and inventoryHud.ui we can keep the original workflow and create the desired functions.
@@ -115,23 +124,12 @@ The changes for Requirement 1 are following the design-pattern for the Inventory
 We manage to change the position of the display message, by changing the offset of the display message related to the crosshair and the toolbar at the bottom. However,
 
 #### Requirement 3.
-We manage to make the toolbar to appear if you select an item and then disappear after 2 seconds if no new item is selected. However, we did not have time to finalize the code and the toolbar so it cannot fade out. The function also contains a bug which makes the toolbar static sometime and out-of-synq with the players change of items. In order to solve this problem we have to modify the `AnimationThread` to be able to listen to calls at the same time as it is asleep. This could be solved by using reentrant locks and condition-variables to make the thread wait for a certain event.
+We manage to make the toolbar to appear if you select an item and then disappear after 2 seconds if no new item is selected. This was done by implementing an `AnimationThread` that monitors the condition of the player and sets the `UIText` to invisible after 2seconds. However, we did not have time to finalize the code and the toolbar so it cannot fade out. The function also contains a bug which makes the toolbar static sometime and out-of-synq with the players change of items. In order to solve this problem we have to modify the `AnimationThread` to be able to listen to calls at the same time as it is asleep. This could be solved by using reentrant locks and condition-variables to make the thread wait for a certain event.
 
 In order to make the toolbar fade we need to modify `UIText` and the `Lwjgl` shaders displaying the text to be able to support transparency fades. This is a huge task and we do not have time to implement changes to the core engine.
 
 The implementation of `AnimationtThread` works well with the design-pattern because they are using several threads to do different animation tasks. The problem with the implementation is that it is similar to a spin-lock (rapidly checking one condition) which can effect performance. This was not noted during test so we assumed the effect being minimal. The class is also following the design patter of having brackets of all loops and if-statments, and it uses an already existing class to produce the wanted result.
 
-
-### Project plan
-
-To be able to fulfill the requirements we need to:
-* Read necessary documentation from Terasology such as wikis for NUI and Modules
-* Import and implement the module Inventory to our local Terasology.
-* Modify the NUI inventoryHud.ui to display the name of the item at a correct place at the screen.
-* Modify the class InventoryHud.java to be enable to fading text.
-* Try to create tests or modify existing test for the changes we will made.
-
----
 
 ## Requirements affected by functionality being refactored
 
