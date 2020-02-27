@@ -5,8 +5,7 @@
 Name: Terasology
 URL: [Terasology GitHub](https://github.com/MovingBlocks/Terasology)
 
-One or two sentences describing it
-
+Terasology is simply a Minecraft-inspired tech game.
 
 ## Onboarding experience
 
@@ -16,6 +15,10 @@ After assignment 3, we all wanted to change project because we had a lot of prob
 ## Architectural overview
 Terasology is large project with 170k LOC. It is not feasible to understand all of its system in a project of this scale.
 We have however taken a deeper look into some of its systems.
+
+
+### [Modules](https://github.com/MovingBlocks/Terasology/blob/develop/docs/Modules.md)
+Modules simply include everything that is not game engine. They include e.g. game content, gameplay mechanics.
 
 ### [Events](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems)
 Terasology's event system can send events to entities. Event processing methods can be annotated with `@ReceiveEvent`
@@ -243,7 +246,9 @@ Optional (point 4): the patch is clean.
 
 Optional (point 5): considered for acceptance (passes all automated checks).
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): the patch was marked as "Successful in 14m — No new or fixed alerts" by the CI server that is connected to the base Terasology repo on github. Moreover, same test results were obtained before and after implementing the requirement. The CI server results confirm that the failing test cases are not related to the requirement being implemented.  
+
 * Not a pull-request but an example on how it should look like. [Issue #3193](https://github.com/MovingBlocks/Terasology/pull/3193) Issue 1514 example patch: [Commit](https://github.com/DD2480-Group17/Terasology/commit/73287b6f33c8bd8fb4710606f4d9373d38642bbd).
+
 
 ---
 
@@ -337,7 +342,7 @@ See question 8.
 
 `George`:
 
-About 9-10 hours in total of analyzing code, writing code, and running code. Following are more details:
+About 10-11 hours in total of analyzing code, writing code, and running code. Following are more details:
 * Writing code to add the function of the requirement. The design of the code was changed iteratively to make changes the do not break the design pattern of the project as much as possible. This was hard because there is not much documentation on how most of the classes in the project should be used.
 
 * Therefore, a lot of tracking, tracing, debugging by breakpoints, reading through the code of commit in the [PR](https://github.com/MovingBlocks/Terasology/pull/3705) that we started from and a lot of analysis was done in order to know where to introduce the changes in the code.
@@ -346,7 +351,7 @@ About 9-10 hours in total of analyzing code, writing code, and running code. Fol
 
 * The most correct ways of introducing the changes were not discovered all at once. By re-running the unit tests, one more test failed which revealed that the assumptions that I made at first about the design pattern of the project was wrong. Therefore, more searching through the code was done, and re-changing some parts of the code fixed the failed unit test case.
 
-* Re-running the unit tests takes some time, which slowed the process a little bit.
+* Re-running the unit tests takes some time, which slowed the process re-running the tests a little bit.
 
 For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
@@ -354,8 +359,10 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overall experience
 
-What are your main take-aways from this project? What did you learn?
+* What are your main take-aways from this project? What did you learn?
 
-Optional (point 6): How would you put your work in context with best software engineering practice?
+Learning how to contribute to an open-source project, and navigate through code that is not fully documented.
 
-Optional (point 7): Is there something special you want to mention here?
+* Optional (point 6): How would you put your work in context with best software engineering practice?
+
+* Optional (point 7): Is there something special you want to mention here?
