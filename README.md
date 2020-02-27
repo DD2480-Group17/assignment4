@@ -111,11 +111,8 @@ The GUI changes were made in `addAxis` and `addInputSection`, inside `Controller
 property value `sensitivity` in `Axis`. Axis ids such as `rx` were mapped to proper names such as `Right Joystick X-Axis`
 in `axisMap` in `ControllerConfig`.
 
-##### Before
-![](/images/controller-settings-before.png)
-
-##### After
-![](/images/controller-settings-after.png)
+##### Before & After
+<img src="/images/controller-settings-before.png" width="420"> <img src="/images/controller-settings-after.png" width="420">
 
 ##### Requirement 1 & 2 UML
 
