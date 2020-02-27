@@ -233,7 +233,7 @@ To make the `UIText` adjustable, we tried to use different JSON attributes and s
 The changes made in Requirement 2 are following the design-pattern for the Inventory module and the structure of the NUI in Terasology. The new `UIText` were implemented as an JSON-object in the existing NUI `inventoryHud`. The new class `InventoryText.java` followed the same structure and design as the `InventoryHud.java`. For instance, the class `InventoryText.java` extends from `CoreHudWidget` and uses the abstract method `initialise()` to initialise the new `UIText` widget. The new NUI had the same JSON structure as `healtHud.ui` and `inventoryText.ui`.
 
 
-![Display message](/images/UIText1514.png)
+![UIText1514](/images/UIText1514.png)
 
 
 #### Requirement 3.
