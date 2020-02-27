@@ -139,7 +139,12 @@ For each team member, how much time was spent in
 
 3. reading documentation;
 
-George:
+`Marcus`:
+* 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading 
+documentation about Terasology.
+
+
+`George`:
 About 4-5 hours in total including reading documentation. A lot of documentation, tutorials and information about projects, issues, pull requests were read. Following is a summary:
 * Docker.
 * Gradle.
@@ -151,7 +156,14 @@ About 4-5 hours in total including reading documentation. A lot of documentation
 
 4. configuration and setup;
 
-George:
+`Marcus`:
+* 7h, alot of projects where attempted which are listed bellow:
+* [SirixDB project](https://github.com/sirixdb/sirix), Updated to Java 13, updated to Gradle 6, nothing worked to get the program to work with CMD on Windows or Intellj. The project 
+could not find the variable var which should be included in Java 13. Thee problem where not solved and abandoned because all group members had different issues.
+* Teasology took time to set up, it did not work with Intellij and I needed to downgrade to Java 1.8. After several hours bug fixing the following sequence enables the game
+to be executed from CMD. gradlew, gradlew jar game, without jar bug's appeared in the game. 
+
+`George`:
 About 4-5 hours. The following was tried:
 * First [SirixDB project](https://github.com/sirixdb/sirix) was tried. I installed Docker and gradle on linux VM on my computer (I have Windows) and tried to run the docker image of `SirixDB project`. However, it did not succeed. This needed reading about docker and gradle before actually doing the installation steps.
 
@@ -159,12 +171,21 @@ About 4-5 hours. The following was tried:
 
 5. analyzing code/output;
 
-George:
+`Marcus`:
+* 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the 
+solution should be implemented.
+
+`George`:
 See question 8.
 
 6. writing documentation;
 
-George:
+`Marcus`:
+* Wrote documentation to InventoryHud.java and and animation thread.
+* Wrote documentation about workflow and added images.
+* TODO
+
+`George`:
 About 3-4 hours. The following was done:
 * Contribution to README.md file.
 * UML took some time to draw manually.
@@ -172,12 +193,20 @@ About 3-4 hours. The following was done:
 
 7. writing code;
 
-George:
+`Marcus`:
+* 8 hours were spent on adding support for adjusting location on tooltipbar and added functionality that the toolbar diapper after 2seconds and reapper if item is switched.
+This was a bit hard to get to work with the original code.
+
+`George`:
 See question 8.
 
 8. running code?
 
-George:
+`Marcus`:
+
+* see question 8 and 5, running code where included there.
+
+`George`:
 
 About 9-10 hours in total of analyzing code, writing code, and running code. Following are more details:
 * Writing code to add the function of the requirement. The design of the code was changed iteratively to make changes the do not break the design pattern of the project as much as possible. This was hard because there is not much documentation on how most of the classes in the project should be used.
