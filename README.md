@@ -7,13 +7,11 @@ URL: [Terasology GitHub](https://github.com/MovingBlocks/Terasology)
 
 One or two sentences describing it
 
----
 
 ## Onboarding experience
 
 After assignment 3, we all wanted to change project because we had a lot of problems with setting up the project correctly. First, we tried to set up the OSS SirixDB. However, we did not manage to do that properly even when we asked for help from the teaching assistants. After a couple of hours without any success, we decided to go back to the OSS Terasology again. We felt that we did not have time to spend on the set up anymore, and some of the features in Terasology worked before during assignment 3. We found a more detailed description of how to set up Terasology, which we used this time. Now everything works as it should according to the documentation for Terasology.
 
----
 
 ## UML class diagram and its description
 
@@ -21,14 +19,12 @@ Optional (point 1): Architectural overview.
 
 Optional (point 2): relation to design pattern(s).
 
----
 
 ## Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 
 This issue has already had some work on it, as seen in [PR #3705](https://github.com/MovingBlocks/Terasology/pull/3705).
 It does not resolve the entire issue however, and so we will continue work on the issue with the PR as a starting point.
 
----
 
 ### Requirements
 This issue had a large scope of changes and was open for interpretation. Therefore, we came up with the following concrete requirements.
@@ -50,7 +46,6 @@ Right now, when a controller is connected to a computer, one has to close the ga
 #### 4. Implement menu navigation with controller
 Currently, even when the controller is connected and working, it cannot be used to navigate through the menu. One has to use mouse or keyboard to navigate through the menu. That is why the requirement is about making the controller able to do that. (Not solved due to time limitations).
 
----
 
 ### Workflow
 
@@ -116,6 +111,8 @@ To be able to fulfill the requirements we need to:
 * Modify the class InventoryHud.java to be enable to fading text.
 * Try to create tests or modify existing test for the changes we will made.
 
+---
+
 ## Requirements affected by functionality being refactored
 
 Optional (point 3): trace tests to requirements.
@@ -143,6 +140,8 @@ Optional (point 4): the patch is clean.
 
 Optional (point 5): considered for acceptance (passes all automated checks).
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3, [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838): passed all CI tests on github.
+
+---
 
 ## Effort spent
 
