@@ -98,7 +98,7 @@ Some notes:
 * It was hard to write unit tests because **lwjgl** library native files needed to be loaded, and this was done in other classes in a way that made it hard to do such a task without changing the infrastructure of the code.
 
 UML over that changes follows:
-![UML](/images/uml.jpg)
+![UML](/images/uml1.jpg)
 
 ### Requirements affected by functionality being refactored
 
@@ -168,7 +168,7 @@ George:
 About 3-4 hours. The following was done:
 * Contribution to README.md file.
 * UML took some time to draw manually.
-* Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1), and detailed Commit message.
+* Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1) of requirement 4 for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), and detailed Commit message for the PR.
 
 7. writing code;
 
