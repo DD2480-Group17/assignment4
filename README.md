@@ -97,16 +97,16 @@ corrected his code to be able to use it as base by implementing missing classes 
 
 We will modify the file inventoryhud.ui to display the name of the item at a correct place and modify InventoryHud.java to enable fading text.
 
-### Requirements affected by functionality being refactored
+## Requirements affected by functionality being refactored
 
 Optional (point 3): trace tests to requirements.
 
-### Existing test cases relating to refactored code
+## Existing test cases relating to refactored code
 
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
 No existing test cases were found for the three classes that were edited.
 
-### Test results
+## Test results
 
 Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
@@ -114,7 +114,7 @@ refactoring).
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
 Same test results before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.
 
-### Patch/fix
+## Patch/fix
 
 The fix can be copied or linked to (git diff).
 * [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 3 patch: [PR #3838](https://github.com/MovingBlocks/Terasology/pull/3838).
