@@ -49,9 +49,49 @@ Currently, even when the controller is connected and working, it cannot be used 
 
 ### Workflow
 
-##### Requirement 1
+#### Requirement 1
+Input settings now allow controller buttons to be bound to actions in the same way as key and mouse input previously was.
+
+This was done by creating a `ControllerButtonEvent`, which is sent to the event handling system in
+`processControllerInput` via `sendControllerButtonEvent` inside `InputSystem`. Some additions in `JInputControllerDevice`
+and `EventCopier` were required to facilitate the event. The event was then handled in
+`NUIManagerInternal.controllerButtonEvent` and sent to `UIInputBind.onControllerButtonEvent` to do the binding.
+
+There was an issue with one button that wouldn't work, and after some debugging that lead me into decompiled .class
+files it turned out that the start-button on an XBOX 360 controller is actually not a button, but a key. This was easily
+fixed when discovered.
+
+Additionally, there was an attempt to allow binding of controller axises, but it is not yet finished. It was implemented
+similarly to buttons, but did not work as expected due to how the bindings were created between actions and input. Some
+actions, such as `forwardsMovement`, which was responsible for moving the character forwards, has a duplicate version
+called `forwardsRealMovement`, which is responsible for handling controller input. The reason that these exist, and
+simply aren't bound the same way as keys, is that these have a single binding for forwards and backwards, whilst the
+key bindings consist of two bindings. There was no translation between these bindings available. Furthermore, the
+input settings page did not display the singly bounded actions, such as `forwardsRealMovement`, and plainly adding them
+in the list would be confusing to the user, since there would be duplicate bindings available for many actions.
+
+Large parts of these functionalities rely on user input, and are thus difficult to test. The controller button event was
+however tested in `InputSystemTest`.
 
 #### Requirement 2
+A setting for controller axis sensitivity was added to the controller settings page for each axis. Axis names
+were made understandable. POV axis (D-pad) was removed, since it functions like a button.
+
+The GUI changes were made in `addAxis` and `addInputSection`, inside `ControllerSettingsScreen`. The  slider was bound to the
+property value `sensitivity` in `Axis`. Axis ids such as `rx` were mapped to proper names such as `Right Joystick X-Axis`
+in `axisMap` in `ControllerConfig`.
+
+##### Before
+![](/images/controller-settings-before.png)
+
+##### After
+![](/images/controller-settings-after.png)
+
+##### Requirement 1 & 2 UML
+
+![](/images/uml-controller-settings.png)
+
+
 
 #### Requirement 3
 
