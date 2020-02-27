@@ -216,7 +216,7 @@ The implementation of `AnimationtThread` works well with the design-pattern beca
 
 The changes we made at the end:
 
-![UML](/images/UML_changes_1514)
+![UML](/images/UML_changes_1514.png)
 
 
 ## Requirements affected by functionality being refactored
