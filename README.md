@@ -36,6 +36,31 @@ to the same event they will be called in the order given by the priority attribu
 methods can consume the event, which can be useful to communicate to lower priority methods whether or not the event
 has been processed or not.
 
+### [Modules](https://github.com/MovingBlocks/Terasology/wiki/Developing-Modules)
+Terasology uses nested Git projects, which they call `Modules`. The `Modules` are excluded from the main repository called MovingBlocks, which is holding the core of Terasology and its functionality. Each module has its own nested root located under the path /modules/ in the main repository. By separating the `Modules` from the main Terasology repository, the contributors can avoid faulty code to be pushed to it. They can also test the new features and check bug fixes before they actually add it to the core game. This type architecture is preferable when it comes to source control, because you can treat the two pieces independently.
+
+Each module in Terasology follow a specific structure and include:
+* assets
+    * blocks
+    * blockTiles
+    * prefabs
+    * sounds
+* src
+    * tests (not all of them)
+
+The modules need to have a namespace that fits the pattern org.terasology.<nameOfModule>, because otherwise it might not be build or loaded as expected.
+
+### [NUI](https://github.com/Terasology/TutorialNui/wiki)
+`NUI` is the user interface framework for Terasology. There are four different principles for a NUI which are `Independent Rendering`, Styles applied through `Skins`, `Databinding` and `Layout Assets`. `Independent Rendering` means that the NUI's rendering is driven through a Canvas which provides methods for rendering. The `Skins` are used to define and style elements like CSS. `Databinding` keep widgets synchronized to a certain field. `Layout Assets` defines each UI element in JSON format or as a JSON object.
+
+Each individual NUI requires:
+* A module.
+* An UI file with a JSON-based hierarchical structure which contains the layout of the interface.
+* A Java class located in the module, which initialise, populate and add event handlers to the user Interface.
+
+There are several components that can be used for building a `NUI` in Terasology. These components are called widget, where all of them extends from the abstract class `AbstractWidget.java` and implements from the interface UIWidget. Each widget are named UI + the feature/form of the widget. For instance, UIBox is a box and UIList is a vertical list of elements.
+
+
 ## Relation to design patterns
 
 ### Controller button rebinding with events
@@ -186,12 +211,10 @@ To be able to fulfill the requirements we need to:
 * Try to create tests or modify existing test for the changes we will made.
 
 ### Workflow
-Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before. Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
+Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before. Someone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
 By adding functionality to the InventoryHud.java and inventoryHud.ui we can keep the original workflow and create the desired functions.
 
 #### Requirement 1.
-Requirement 1.
-
 After we understood the architecture related to this issue and got some help from one of the members in the Terasology community,
 we managed to implement some of the old code from an PR from 2018. The changes that we made affected the module Inventory, the class InventoryHud.java and the NUI inventoryHud.ui. To be able to display the name of the current tooltip, we needed to create a new core widget as a `UIText` and initialise it with the abstract method `initialise()`. We also needed to add the `UIText` as an JSON object in content of the NUI inventoryHud. To be able to know which item the localPlayer where currently holding, we used the class from PR 2018 called `CurrentSlotItem` and the method `get()` which returns the name of the current item. By doing that, we were able to show a static display message of the name of the current tooltip and make it change whenever we switch slots from 0...9. The display message where static.
 
