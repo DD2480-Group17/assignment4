@@ -57,14 +57,23 @@ After we re-used and implemented some of the code from an old PR (that the commu
 
 ---
 
+### Project plan
+
+To be able to fulfill the requirements we need to:
+* Read necessary documentation from Terasology such as wikis for NUI and Modules
+* Import and implement the module Inventory to our local Terasology.
+* Modify the NUI inventoryHud.ui to display the name of the item at a correct place at the screen.
+* Modify the class InventoryHud.java to be enable to fading text.
+* Try to create tests or modify existing test for the changes we will made.
+
+---
+
 ### Workflow
 #### Issue [Item tooltip on tool changing #1514](https://github.com/MovingBlocks/Terasology/issues/1514)
 
 Terasology uses modules to apply new packages and functionality. This is to avoid faulty code to be pushed to the core game and can be tested before.
 Somenone tried to solve issue 1514 but failed, we used his code to get inspiration on how we could solve this issue, however his code did not work. Thus we
 corrected his code to be able to use it as base by implementing missing classes and values in to the code. The work flow can be illustrated by following image: ![workflow](/images/1514.png).
-
-We will modify the file inventoryhud.ui to display the name of the item at a correct place and modify InventoryHud.java to enable fading text.
 
 #### Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648)
 ##### Requirement 1
