@@ -258,6 +258,8 @@ No existing test cases were found for the three classes that were edited.
 
 ## Test results
 
+* [Issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648) Requirement 1 & 2 test results [before](/test_reports/issue-3648-req-1-2/before/testReport.html) and [after](/test_reports/issue-3648-req-1-2/after/testReport.html)
+
 * Issue [Add new "Controller Settings" page #3648](https://github.com/MovingBlocks/Terasology/issues/3648), requirement 3:  
   * Same test results were obtained before and after implementing the requirement. The failing test cases are not related to the requirement being implemented.  
   * The patch was also marked as "Successful in 14m — No new or fixed alerts" by the CI server connected to the base Terasology repo on github, which confirms that the failing test cases are not related to the requirement being implemented.
