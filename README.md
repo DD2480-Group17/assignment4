@@ -161,9 +161,9 @@ Therefore, a compromise was chosen to be implemented. A button called "Refresh C
 
 The changes that were done were the following:
 
-* A `public` `void` method called `refreshControllerList` was added in `LwjglInput` class. This class handles, among others, initialization of other class instances that handle the keyboard, mouse and controllers at the start of the game and setting up the input system correctly in the game. `refreshControllerList` method refreshes the controllers list by re-initialization of the `JInputControllerDevice` instance that re-polls the new controllers list every time it is created, and resetting the input system in the game. The added method also performs a cleanup for the threads spawned by the **lwjgl** library in `JInputControllerDevice` every time a new `JInputControllerDevice` is created. This is done in order not to exhaust operating system resources. Moreover, the added method invalidates the current Controller settings instance from current `AssetManager` if that screen was already loaded and saved in the AssetManager.
+* A `public` `void` method called `refreshControllerList` was added in `LwjglInput` class. This class handles, among others, initialization of other class instances that handle the keyboard, mouse and controllers at the start of the game and setting up the input system correctly in the game. `refreshControllerList` method refreshes the controllers list by re-initialization of the `JInputControllerDevice` instance that re-polls the new controllers list every time it is created, and resetting the input system in the game. Moreover, the added method invalidates the current Controller settings instance from current `AssetManager` if that screen was already loaded and saved in the AssetManager.
 
-* The constructor in `JInputControllerDevice.java` was edited to poll the list of plugged-in controllers every time an instance of `JInputControllerDevice` is created and to update the current controllers list.
+* The constructor in `JInputControllerDevice.java` was edited to poll the list of plugged-in controllers every time an instance of `JInputControllerDevice` is created and to update the current controllers list. Moreover, it also performs a cleanup for the threads spawned by the **lwjgl** library in `JInputControllerDevice` every time the constructor is called. This is done in order not to exhaust operating system resources. 
 
 * A button was added on the "main menu" screen by editing three files: `menu.lang`, `menu_en.lang` and `mainMenuScreen.ui`.
 
@@ -172,7 +172,7 @@ The changes that were done were the following:
 Some notes:
 * Re-polling the list of connected controllers works only for windows 10 for now due to the limitation of the **lwjgl** library as mentioned above.
 
-* It was hard to write unit tests because it was hard to simulate plugging and unplugging the controller.
+* It was hard to write unit tests (two unit tests only were written) because it was hard to simulate plugging and unplugging the controller.
 
 UML over that changes done to fulfill requirement 3 follows:
 ![UML](/images/uml1.jpg)
@@ -183,7 +183,7 @@ Not solved due to time limitation.
 #### Plan to continue working with the requirement and the issue in general
 In order to complete working on requirement 4, the following is needed:
 * Need to implement and test for other operating systems (e.g. linux and macOS) and other types of controllers.
-* Need unit tests.
+* Need more unit tests.
 * Need to have a way to not need the "Refresh Controllers" totally. Maybe JNI is a good option. Or move "Refresh Controllers" button to be in "Controller Settings" menu instead.
 
 Regarding the rest of the issue, the issue is very broad and is connected to other issues such as ([issue #2125](https://github.com/MovingBlocks/Terasology/issues/2125)), and has a lot of features that could be added and are related to this issue. One could continue by building upon what was already done by implementing new feature such as Requirement 4 here, and looking at the related issues.
@@ -435,6 +435,8 @@ About 10-11 hours in total of analyzing code, writing code, and running code. Fo
 * The most correct ways of introducing the changes were not discovered all at once. By re-running the unit tests, one more test failed which revealed that the assumptions that I made at first about the design pattern of the project was wrong. Therefore, more searching through the code was done, and re-changing some parts of the code fixed the failed unit test case.
 
 * Re-running the unit tests takes some time, which slowed the process re-running the tests a little bit.
+
+* Two unit tests were written.
 
 ## Overall experience
 

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">10.841s</div>
+<div class="counter">6.355s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">testEntityNetworkIdChangedOnServerStart()</td>
-<td class="success">5.781s</td>
+<td class="success">2.952s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testNetwork()</td>
-<td class="success">5.060s</td>
+<td class="success">3.403s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,92 +92,46 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:48:32.755 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:48:32.758 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:48:32.760 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:48:32.764 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:48:32.766 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:48:32.768 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:48:32.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:48:32.772 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:48:32.774 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:48:32.903 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:48:32.937 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:48:32.947 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:48:35.487 [Test worker] INFO  o.t.w.c.b.ExtraBlockDataManager - Extra data slots registered:
-19:48:36.768 [Test worker] WARN  o.t.engine.ComponentSystemManager - System org.terasology.network.internal.NetworkEntitySystem registered post-init.
-19:48:37.332 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Started server on port 7777
-19:48:37.333 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - No server MOTD is defined
-19:48:38.879 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Microsoft Wi-Fi Direct Virtual Adapter&quot;, hostname &quot;fe80:0:0:0:9c75:fa68:fe96:9f30%wlan0&quot; (fe80:0:0:0:9c75:fa68:fe96:9f30%wlan0)
-19:48:39.935 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Realtek PCIe GBE Family Controller&quot;, hostname &quot;fe80:0:0:0:5c80:4fd:2c7f:e240%eth0&quot; (fe80:0:0:0:5c80:4fd:2c7f:e240%eth0)
-19:48:41.017 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Microsoft Wi-Fi Direct Virtual Adapter #2&quot;, hostname &quot;fe80:0:0:0:f1e9:a032:a417:a576%wlan1&quot; (fe80:0:0:0:f1e9:a032:a417:a576%wlan1)
-19:48:41.263 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;192.168.0.180&quot; (192.168.0.180)
-19:48:41.264 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;fe80:0:0:0:db3:4bd4:785a:186c%wlan2&quot; (fe80:0:0:0:db3:4bd4:785a:186c%wlan2)
-19:48:41.445 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
-19:48:41.447 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
-19:48:41.833 [Test worker] WARN  o.t.engine.ComponentSystemManager - System org.terasology.network.internal.NetworkEntitySystem registered post-init.
-19:48:41.855 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Started server on port 7777
-19:48:41.856 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - No server MOTD is defined
-19:48:43.053 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Microsoft Wi-Fi Direct Virtual Adapter&quot;, hostname &quot;fe80:0:0:0:9c75:fa68:fe96:9f30%wlan0&quot; (fe80:0:0:0:9c75:fa68:fe96:9f30%wlan0)
-19:48:43.881 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Realtek PCIe GBE Family Controller&quot;, hostname &quot;fe80:0:0:0:5c80:4fd:2c7f:e240%eth0&quot; (fe80:0:0:0:5c80:4fd:2c7f:e240%eth0)
-19:48:44.750 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Microsoft Wi-Fi Direct Virtual Adapter #2&quot;, hostname &quot;fe80:0:0:0:f1e9:a032:a417:a576%wlan1&quot; (fe80:0:0:0:f1e9:a032:a417:a576%wlan1)
-19:48:44.768 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;192.168.0.180&quot; (192.168.0.180)
-19:48:44.769 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;fe80:0:0:0:db3:4bd4:785a:186c%wlan2&quot; (fe80:0:0:0:db3:4bd4:785a:186c%wlan2)
-19:48:45.902 [New I/O worker #10] INFO  o.t.n.i.ServerHandshakeHandler - Sending Server Hello
-19:48:46.087 [New I/O worker #19] INFO  o.t.n.i.ClientHandshakeHandler - Received Server Hello
-19:48:46.096 [New I/O worker #19] INFO  o.t.n.i.ClientHandshakeHandler - No existing identity, requesting one
-19:48:46.126 [New I/O worker #10] INFO  o.t.n.i.ServerHandshakeHandler - Received new identity request
-19:48:46.489 [New I/O worker #10] WARN  o.t.network.internal.ServerHandler - Unexpected exception from client
-java.nio.channels.ClosedChannelException: null
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:433)
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.close(AbstractNioWorker.java:373)
-	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:81)
-	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:779)
-	at org.jboss.netty.channel.SimpleChannelHandler.closeRequested(SimpleChannelHandler.java:334)
-	at org.jboss.netty.channel.SimpleChannelHandler.handleDownstream(SimpleChannelHandler.java:260)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:784)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:54)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:784)
-	at org.jboss.netty.handler.codec.compression.ZlibEncoder$1.operationComplete(ZlibEncoder.java:396)
-	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:409)
-	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:395)
-	at org.jboss.netty.channel.DefaultChannelFuture.setSuccess(DefaultChannelFuture.java:340)
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.write0(AbstractNioWorker.java:220)
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:146)
-	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
-	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:779)
-	at org.terasology.network.internal.MetricRecordingHandler.writeRequested(MetricRecordingHandler.java:53)
-	at org.jboss.netty.channel.SimpleChannelHandler.handleDownstream(SimpleChannelHandler.java:254)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:784)
-	at org.jboss.netty.channel.Channels.write(Channels.java:725)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.doEncode(OneToOneEncoder.java:71)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:59)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:784)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:60)
-	at org.jboss.netty.handler.codec.compression.ZlibEncoder.handleDownstream(ZlibEncoder.java:332)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:784)
-	at org.jboss.netty.channel.Channels.write(Channels.java:725)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.doEncode(OneToOneEncoder.java:71)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:59)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendDownstream(DefaultChannelPipeline.java:784)
-	at org.jboss.netty.channel.Channels.write(Channels.java:725)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.doEncode(OneToOneEncoder.java:71)
-	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:59)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:591)
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:582)
-	at org.jboss.netty.channel.Channels.write(Channels.java:704)
-	at org.jboss.netty.channel.Channels.write(Channels.java:671)
-	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
-	at org.terasology.network.internal.ServerHandshakeHandler.processNewIdentityRequest(ServerHandshakeHandler.java:143)
-	at org.terasology.network.internal.ServerHandshakeHandler.messageReceived(ServerHandshakeHandler.java:82)
+<pre>01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:55:02.234 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:55:02.297 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:55:02.312 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:55:02.312 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:55:03.566 [Test worker] INFO  o.t.w.c.b.ExtraBlockDataManager - Extra data slots registered:
+01:55:04.383 [Test worker] WARN  o.t.engine.ComponentSystemManager - System org.terasology.network.internal.NetworkEntitySystem registered post-init.
+01:55:04.640 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Started server on port 7777
+01:55:04.640 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - No server MOTD is defined
+01:55:05.640 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Realtek PCIe GBE Family Controller&quot;, hostname &quot;fe80:0:0:0:5c80:4fd:2c7f:e240%eth0&quot; (fe80:0:0:0:5c80:4fd:2c7f:e240%eth0)
+01:55:06.489 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Microsoft Wi-Fi Direct Virtual Adapter #2&quot;, hostname &quot;fe80:0:0:0:f1e9:a032:a417:a576%wlan1&quot; (fe80:0:0:0:f1e9:a032:a417:a576%wlan1)
+01:55:06.503 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;192.168.0.180&quot; (192.168.0.180)
+01:55:06.503 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;fe80:0:0:0:db3:4bd4:785a:186c%wlan2&quot; (fe80:0:0:0:db3:4bd4:785a:186c%wlan2)
+01:55:06.595 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
+01:55:06.596 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
+01:55:06.881 [Test worker] WARN  o.t.engine.ComponentSystemManager - System org.terasology.network.internal.NetworkEntitySystem registered post-init.
+01:55:06.892 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Started server on port 7777
+01:55:06.892 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - No server MOTD is defined
+01:55:07.883 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Realtek PCIe GBE Family Controller&quot;, hostname &quot;fe80:0:0:0:5c80:4fd:2c7f:e240%eth0&quot; (fe80:0:0:0:5c80:4fd:2c7f:e240%eth0)
+01:55:08.718 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Microsoft Wi-Fi Direct Virtual Adapter #2&quot;, hostname &quot;fe80:0:0:0:f1e9:a032:a417:a576%wlan1&quot; (fe80:0:0:0:f1e9:a032:a417:a576%wlan1)
+01:55:08.729 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;192.168.0.180&quot; (192.168.0.180)
+01:55:08.730 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Listening on network interface &quot;Intel(R) Dual Band Wireless-AC 7265&quot;, hostname &quot;fe80:0:0:0:db3:4bd4:785a:186c%wlan2&quot; (fe80:0:0:0:db3:4bd4:785a:186c%wlan2)
+01:55:09.505 [New I/O worker #10] INFO  o.t.n.i.ServerHandshakeHandler - Sending Server Hello
+01:55:09.583 [New I/O worker #19] INFO  o.t.n.i.ClientHandshakeHandler - Received Server Hello
+01:55:09.583 [New I/O worker #19] INFO  o.t.n.i.ClientHandshakeHandler - No existing identity, requesting one
+01:55:09.599 [New I/O worker #10] INFO  o.t.n.i.ServerHandshakeHandler - Received new identity request
+01:55:09.896 [New I/O worker #19] INFO  o.t.n.i.ClientHandshakeHandler - Received identity from server
+01:55:09.943 [New I/O worker #10] WARN  o.t.network.internal.ServerHandler - Unexpected exception from client
+java.lang.NullPointerException: null
+	at org.terasology.protobuf.NetData$WorldInfo$Builder.setTitle(NetData.java:20129)
+	at org.terasology.network.internal.NetworkSystemImpl.getServerInfoMessage(NetworkSystemImpl.java:857)
+	at org.terasology.network.internal.NetworkSystemImpl.getServerInfoMessage(NetworkSystemImpl.java:843)
+	at org.terasology.network.internal.ServerConnectionHandler.messageReceived(ServerConnectionHandler.java:75)
 	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
 	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
 	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
@@ -208,10 +162,10 @@ java.nio.channels.ClosedChannelException: null
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-19:48:46.499 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
-19:48:46.505 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
-19:48:46.506 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
-19:48:46.507 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
+01:55:09.980 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
+01:55:09.984 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
+01:55:09.984 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
+01:55:09.985 [Test worker] INFO  o.t.n.internal.NetworkSystemImpl - Network shutdown
 </pre>
 </span>
 </div>
@@ -223,7 +177,7 @@ java.nio.channels.ClosedChannelException: null
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.10.3</a> at Feb 27, 2020 7:51:41 PM</p>
+<a href="http://www.gradle.org">Gradle 4.10.3</a> at Feb 28, 2020 1:56:29 AM</p>
 </div>
 </div>
 </body>

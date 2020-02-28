@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">6.977s</div>
+<div class="counter">2.825s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,42 +79,42 @@
 </thead>
 <tr>
 <td class="success">testGetSimplePrefab()</td>
-<td class="success">0.801s</td>
+<td class="success">0.337s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabHasDefinedComponents()</td>
-<td class="success">0.783s</td>
+<td class="success">0.298s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabHasDefinedComponentsWithOrderedMap()</td>
-<td class="success">0.733s</td>
+<td class="success">0.304s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabInheritsFromParent()</td>
-<td class="success">0.719s</td>
+<td class="success">0.345s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabTransitiveInheritance()</td>
-<td class="success">0.683s</td>
+<td class="success">0.300s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabWithCollectionOfMappedContainers()</td>
-<td class="success">0.917s</td>
+<td class="success">0.307s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabWithListOfEnums()</td>
-<td class="success">1.372s</td>
+<td class="success">0.566s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPrefabWithListOfMappedContainers()</td>
-<td class="success">0.969s</td>
+<td class="success">0.368s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -122,153 +122,153 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:55:58.036 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:55:58.041 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:55:58.049 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:55:58.052 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:55:58.054 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:55:58.057 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:55:58.062 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:55:58.066 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:55:58.069 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:55:58.181 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:55:58.231 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:55:58.779 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:55:58.779 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:55:58.783 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:55:58.783 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:55:58.783 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:55:58.783 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:55:59.299 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withListEnumContainer with inputs [/unittest/assets/prefabs/withListEnumContainer.prefab]
-19:55:59.403 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:55:59.410 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:55:59.414 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:55:59.418 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:55:59.419 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:55:59.423 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:55:59.429 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:55:59.433 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:55:59.467 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:55:59.593 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:55:59.650 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:00.228 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:00.228 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:00.228 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:00.228 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:00.228 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:00.228 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:00.332 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withListContainer with inputs [/unittest/assets/prefabs/withListContainer.prefab]
-19:56:00.369 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:56:00.369 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:56:00.377 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:56:00.377 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:56:00.381 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:56:00.385 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:56:00.388 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:56:00.391 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:56:00.391 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:56:00.527 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:00.564 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:01.052 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:01.052 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:01.055 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:01.057 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:01.058 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:01.058 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:01.161 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:simple with inputs [/unittest/assets/prefabs/simple.prefab]
-19:56:01.169 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:56:01.173 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:56:01.175 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:56:01.175 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:56:01.179 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:56:01.179 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:56:01.183 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:56:01.188 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:56:01.191 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:56:01.298 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:01.337 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:01.785 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:01.785 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:01.785 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:01.785 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:01.785 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:01.785 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:01.893 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponentContainingOrderedMap with inputs [/unittest/assets/prefabs/withComponentContainingOrderedMap.prefab]
-19:56:01.899 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:56:01.905 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:56:01.908 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:56:01.910 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:56:01.910 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:56:01.914 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:56:01.914 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:56:01.918 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:56:01.918 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:56:02.015 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:02.051 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:02.476 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:02.476 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:02.476 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:02.476 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:02.477 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:02.477 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:02.575 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:multilevelInheritance with inputs [/unittest/assets/prefabs/multilevelInheritance.prefab]
-19:56:02.576 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:inheritsComponent with inputs [/unittest/assets/prefabs/inheritsComponent.prefab]
-19:56:02.577 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponent with inputs [/unittest/assets/prefabs/withComponent.prefab]
-19:56:02.584 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:56:02.589 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:56:02.592 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:56:02.595 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:56:02.597 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:56:02.599 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:56:02.602 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:56:02.607 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:56:02.609 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:56:02.708 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:02.744 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:03.247 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:03.247 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:03.248 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:03.248 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:03.249 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:03.249 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:03.361 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponent with inputs [/unittest/assets/prefabs/withComponent.prefab]
-19:56:03.369 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:56:03.371 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:56:03.373 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:56:03.375 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:56:03.375 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:56:03.379 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:56:03.382 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:56:03.385 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:56:03.389 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:56:03.499 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:03.676 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:04.132 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:04.132 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:04.132 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:04.132 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:04.132 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:04.132 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:04.274 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withCollectionOfMappedContainers with inputs [/unittest/assets/prefabs/withCollectionOfMappedContainers.prefab]
-19:56:04.288 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
-19:56:04.290 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
-19:56:04.292 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
-19:56:04.293 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
-19:56:04.295 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
-19:56:04.295 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
-19:56:04.295 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
-19:56:04.299 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
-19:56:04.305 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
-19:56:04.415 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:04.456 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
-19:56:04.925 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
-19:56:04.927 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
-19:56:04.927 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
-19:56:04.927 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
-19:56:04.927 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
-19:56:04.928 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
-19:56:04.997 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:inheritsComponent with inputs [/unittest/assets/prefabs/inheritsComponent.prefab]
-19:56:04.998 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponent with inputs [/unittest/assets/prefabs/withComponent.prefab]
+<pre>01:51:20.754 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:20.770 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:20.817 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:20.848 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:21.051 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:21.051 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:21.051 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:21.051 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:21.051 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:21.051 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:21.270 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withListEnumContainer with inputs [/unittest/assets/prefabs/withListEnumContainer.prefab]
+01:51:21.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:21.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:21.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:21.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:21.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:21.348 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:21.348 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:21.348 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:21.348 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:21.395 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:21.426 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:21.629 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:21.629 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:21.629 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:21.629 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:21.629 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:21.629 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:21.676 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withListContainer with inputs [/unittest/assets/prefabs/withListContainer.prefab]
+01:51:21.691 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:21.691 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:21.691 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:21.691 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:21.691 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:21.707 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:21.707 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:21.707 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:21.707 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:21.769 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:21.785 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:21.988 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:21.988 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:21.988 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:21.988 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:21.988 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:21.988 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:22.035 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:simple with inputs [/unittest/assets/prefabs/simple.prefab]
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:22.035 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:22.082 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:22.097 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:22.285 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:22.285 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:22.285 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:22.285 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:22.285 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:22.285 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:22.332 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponentContainingOrderedMap with inputs [/unittest/assets/prefabs/withComponentContainingOrderedMap.prefab]
+01:51:22.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:22.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.332 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:22.347 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.347 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:22.347 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:22.347 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:22.347 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:22.347 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:22.394 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:22.410 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:22.582 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:22.582 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:22.582 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:22.582 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:22.582 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:22.582 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:22.629 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:multilevelInheritance with inputs [/unittest/assets/prefabs/multilevelInheritance.prefab]
+01:51:22.629 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:inheritsComponent with inputs [/unittest/assets/prefabs/inheritsComponent.prefab]
+01:51:22.629 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponent with inputs [/unittest/assets/prefabs/withComponent.prefab]
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:22.644 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:22.691 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:22.707 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:22.879 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:22.879 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:22.894 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:22.894 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:22.894 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:22.894 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:22.925 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponent with inputs [/unittest/assets/prefabs/withComponent.prefab]
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:22.941 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:22.988 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:23.004 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:23.191 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:23.191 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:23.191 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:23.191 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:23.191 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:23.191 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:23.238 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withCollectionOfMappedContainers with inputs [/unittest/assets/prefabs/withCollectionOfMappedContainers.prefab]
+01:51:23.238 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BiomesAPI-1.0.0-SNAPSHOT
+01:51:23.238 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: BuilderSampleGameplay-2.2.1-SNAPSHOT
+01:51:23.238 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Core-2.2.1-SNAPSHOT
+01:51:23.253 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreSampleGameplay-2.2.1-SNAPSHOT
+01:51:23.253 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreAssets-1.0.1-SNAPSHOT
+01:51:23.253 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: CoreBlocks-1.0.1-SNAPSHOT
+01:51:23.253 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Health-0.1.0-SNAPSHOT
+01:51:23.253 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: Inventory-1.0.0-SNAPSHOT
+01:51:23.253 [Test worker] INFO  o.t.module.ModulePathScanner - Discovered module: ModuleTestingEnvironment-0.1.0-SNAPSHOT
+01:51:23.332 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:23.347 [Test worker] WARN  org.reflections.Reflections - given scan urls are empty. set urls in the configuration
+01:51:23.535 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.atlas.AltasTileProducer
+01:51:23.535 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.NoiseTextureProducer
+01:51:23.535 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.iconmesh.IconMeshDataProducer
+01:51:23.535 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.world.block.loader.AutoBlockProvider
+01:51:23.535 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.font.FontMaterialProducer
+01:51:23.535 [Test worker] ERROR o.t.a.m.ModuleAwareAssetTypeManager - No asset type available for asset producer class org.terasology.rendering.assets.texture.ColorTextureProducer
+01:51:23.581 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:inheritsComponent with inputs [/unittest/assets/prefabs/inheritsComponent.prefab]
+01:51:23.581 [Test worker] INFO  o.t.e.prefab.internal.PrefabFormat - Attempting to deserialize prefab unittest:withComponent with inputs [/unittest/assets/prefabs/withComponent.prefab]
 </pre>
 </span>
 </div>
@@ -280,7 +280,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.10.3</a> at Feb 27, 2020 7:59:38 PM</p>
+<a href="http://www.gradle.org">Gradle 4.10.3</a> at Feb 28, 2020 1:52:59 AM</p>
 </div>
 </div>
 </body>
