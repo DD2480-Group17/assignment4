@@ -16,10 +16,6 @@ After assignment 3, we all wanted to change project because we had a lot of prob
 Terasology is large project with 170k LOC. It is not feasible to understand all of its system in a project of this scale.
 We have however taken a deeper look into some of its systems.
 
-
-### [Modules](https://github.com/MovingBlocks/Terasology/blob/develop/docs/Modules.md)
-Modules simply include everything that is not game engine. They include e.g. game content, gameplay mechanics.
-
 ### [Events](https://github.com/MovingBlocks/Terasology/wiki/Events-and-Systems)
 Terasology's event system can send events to entities. Event processing methods can be annotated with `@ReceiveEvent`
 to be called every time an event is sent.
@@ -42,17 +38,17 @@ has been processed or not.
 ### [Modules](https://github.com/MovingBlocks/Terasology/wiki/Developing-Modules)
 Terasology uses nested Git projects, which they call `Modules`. The `Modules` are excluded from the main repository called MovingBlocks, which is holding the core of Terasology and its functionality. Each module has its own nested root located under the path /modules/ in the main repository. By separating the `Modules` from the main Terasology repository, the contributors can avoid faulty code to be pushed to it. They can also test the new features and check bug fixes before they actually add it to the core game. This type architecture is preferable when it comes to source control, because you can treat the two pieces independently.
 
-Each module in Terasology follow a specific structure and include:
+Each module in Terasology follow a specific structure and includes:
 * assets
     * blocks
-    * blockTiles
-    * prefabs
+    * blockTiles (block textures)
+    * prefabs (entity recipes)
     * sounds
 * src
     * java
     * tests (not all of them)
 
-The modules need to have a namespace that fits the pattern org.terasology.<nameOfModule>, because otherwise it might not be build or loaded as expected.
+Modules simply include everything that is not game engine. They include e.g. game content, gameplay mechanics. The modules need to have a namespace that fits the pattern org.terasology.<nameOfModule>, because otherwise it might not be build or loaded as expected.
 
 ### [NUI](https://github.com/Terasology/TutorialNui/wiki)
 `NUI` is the user interface framework for Terasology. There are four different principles for a NUI which are `Independent Rendering`, Styles applied through `Skins`, `Databinding` and `Layout Assets`. `Independent Rendering` means that the NUI's rendering is driven through a Canvas which provides methods for rendering. The `Skins` are used to define and style elements like CSS. `Databinding` keep widgets synchronized to a certain field. `Layout Assets` defines each UI element in JSON format or as a JSON object.
@@ -163,7 +159,7 @@ The changes that were done were the following:
 
 * A `public` `void` method called `refreshControllerList` was added in `LwjglInput` class. This class handles, among others, initialization of other class instances that handle the keyboard, mouse and controllers at the start of the game and setting up the input system correctly in the game. `refreshControllerList` method refreshes the controllers list by re-initialization of the `JInputControllerDevice` instance that re-polls the new controllers list every time it is created, and resetting the input system in the game. Moreover, the added method invalidates the current Controller settings instance from current `AssetManager` if that screen was already loaded and saved in the AssetManager.
 
-* The constructor in `JInputControllerDevice.java` was edited to poll the list of plugged-in controllers every time an instance of `JInputControllerDevice` is created and to update the current controllers list. Moreover, it also performs a cleanup for the threads spawned by the **lwjgl** library in `JInputControllerDevice` every time the constructor is called. This is done in order not to exhaust operating system resources. 
+* The constructor in `JInputControllerDevice.java` was edited to poll the list of plugged-in controllers every time an instance of `JInputControllerDevice` is created and to update the current controllers list. Moreover, it also performs a cleanup for the threads spawned by the **lwjgl** library in `JInputControllerDevice` every time the constructor is called. This is done in order not to exhaust operating system resources.
 
 * A button was added on the "main menu" screen by editing three files: `menu.lang`, `menu_en.lang` and `mainMenuScreen.ui`.
 
@@ -241,7 +237,7 @@ In order to make the toolbar fade we need to modify `UIText` and the `Lwjgl` sha
 
 The implementation of `AnimationtThread` works well with the design-pattern because they are using several threads to do different animation tasks. The problem with the implementation is that it is similar to a spin-lock (rapidly checking one condition) which can effect performance. This was not noted during test so we assumed the effect being minimal. The class is also following the design patter of having brackets of all loops and if-statments, and it uses an already existing class to produce the wanted result.
 
-The changes we made at the end:
+The changes we made at the end displayed as aN UML:
 
 ![UML](/images/UML_changes_1514.png)
 
@@ -293,6 +289,9 @@ setup time often overlapped. We met the entire groups on two different occasions
 `Edvin`: 30 min
 * Review and test of refresh controller button PR
 
+`Johanna`; 30 min
+* Review and discuss how to split up the work
+
 ### 3. reading documentation
 
 `Edvin`: 2h
@@ -307,6 +306,9 @@ setup time often overlapped. We met the entire groups on two different occasions
 [#3193](https://github.com/MovingBlocks/Terasology/pull/3193),
 [#3648](https://github.com/MovingBlocks/Terasology/issues/3648),
 [#3705](https://github.com/MovingBlocks/Terasology/pull/3705)
+
+`Johanna`:
+* 4h. Read documentation of other projects to see if they were relevant for this assignment and be able to set them up (estimated time 1 hour). Read the documentation for Terasology to understand the architecture for the project, especially when it comes to Modules and NUI (estimated time 2 hours). Read previous work on issue 1514 and different NUI such as healtHud.ui and creditsScreen.ui (estimated time 1 hour).
 
 `Marcus`:
 * 3h, A lot of the time went to read documentation about terasology and other projects, for example on how to set up Gradle and solve issues with different Java version. However, I estimate that i spent 3h reading
@@ -332,6 +334,11 @@ but I never got the docker image to run. Some tests worked, but it never finishe
 which could generate IntelliJ config via the command `gradle idea`. I had one issue which caused IntelliJ to not find
 main class path. I needed to run the code via IntelliJ however to debug it in debug mode. I solved it by using the
 `Rebuild Project` action.
+
+`Johanna`:
+* 5h, because we tried different projects before we decided to go back to Terasology, and then we needed to set up Terasology again.
+* 3h for [SirixDB](https://github.com/sirixdb/sirix). I needed to update to Java 13 and Gradle 6 to be able to build the project. However, I got some errors when I tried to build the project which probably where related to Gradle. The project did miss or had re-locate some files (according to the error message) that was necessary for the build, which I tried to find. All of us had problems with SirixDB, so we decided to go back to Terasology after several attempts to make it work on our computers.
+* 2h for setting up the project Terasology again. Needed to fix Java 8 on my computer. Had to start over the set up a couple of times because some features did not work after I had pulled some changes from our forked repo, or when I tried to implement a new NUI or module. Needed to install groovy on my computer to be able to import the module Inventory, which was necessary for our issue 1514.
 
 `Marcus`:
 * 7h, alot of projects where attempted which are listed bellow:
@@ -363,6 +370,9 @@ and `NUIManagerInternal`.
 * 2h for figuring out XBOX 360 Controller button/key/axis labeling and naming. (It is surprisingly confusing!)
 * 1h for understanding existing input and event test systems.
 
+`Johanna`:
+* 4h. Some parts of the project did not have any clear documentation or documentation at all. Therefore, I needed to spend a lot of time analyzing the code. To be able to solve the first requirement for issue 1514, I needed to analyze the PR from 2018 (estimated time 1 hour). To be able to understand the workflow of issue 1514, I needed to go through the code in several classes like `InventoryHud`, `CoreHudWidget`, `AbstractWidget`, `TooltipLine`. To fix the location of the display message in inventoryHud.ui, I needed to analyze the code in healtHud.ui and creditsScreen.ui (estimated time 3 hours).
+
 `Marcus`:
 * 5h, the structure for implementing the functionality where not explained in the documentation, because of that earlier pull-requests and code where studied in order to understand how the
 solution should be implemented.
@@ -378,7 +388,13 @@ See question 8.
 * 1h, creating a clean patch and document contents of PR.
 * 4h 30 min, writing this README.
 
-
+`Johanna`:
+* 7h in total.
+* Wrote documentation for the project plan and the requirements for issue 1514 (estimated time 1 hour).
+* The workflow, how we did fulfill some of the requirements, and what we should have done if we had more time (estimated time 2 hours)
+* Fix UML, typos, structure this README and relevant pictures for issue 1514 (estimated time 1 hour).
+* Write about the architecture of Modules and NUI, and how each requirement affect the design-pattern of the system (estimated time 2 hours).
+* Add other documentation to this README such as onboarding experience, contributions and overall experience (estimate time 1 hour).
 
 `Marcus`:
 * 7 h Wrote documentation to InventoryHud.java, animation thread and in the test class TestInventoryHud.java.
@@ -405,6 +421,8 @@ Added 241 LOC as measured with Lizard. Implemented requirement 1 & 2 for
 * 1h implementing controller axis events in `InputSystem` and `ControllerAxisEvent`.
 * 1h 30 min implementing controller button test in `InputSystemTests`.
 
+`Johanna`
+* 5h. Tested several JSON-attributes and solutions to get the location of the display message adjustable (estimated time 2 hours). Tried to write test to the class `InventoryHud`, with no success (estimated time 1 hour). Tried to create and implement a new NUI called `inventoryText` and a new class called `InventoryText.java`. Moved all functionality from InventoryHud (such as the `AnimationThread` and `CurrentSlotItem`). Could play the game, but did not implement it the new NUI correctly because I could not show the new screen with the tooltipText (estimated time 2 hours).
 
 `Marcus`:
 * 8 hours were spent on adding support for adjusting location on tooltipbar and added functionality that the toolbar diapper after 2seconds and reapper if item is switched.
@@ -421,8 +439,10 @@ See question 8.
 in analyzing and writing code.
 * The entire test suite was only run a few times, and only took a minute to run.
 
-`Marcus`:
+`Johanna`:
+* This part was included in the 5 hours I spend for writing the code + 1 hour running the game and tests back and forth to see how the new features affected the system.
 
+`Marcus`:
 * see question 8 and 5, running code where included there.
 
 `George`:
@@ -445,6 +465,10 @@ About 10-11 hours in total of analyzing code, writing code, and running code. Fo
 * What are your main take-aways from this project? What did you learn?
 
 Learning how to contribute to an open-source project, and navigate through code that is not fully documented.
+Analyze design-patterns and architecture of a complex and large project.
+Split up and divide the workload of issues between different members.
+Create UI for a more complex game.
+
 
 ### Interaction with Terasology community
 
