@@ -388,7 +388,7 @@ See question 8.
 
 `George`:
 
-About 4-5 hours. The following was done:
+About 5-6 hours. The following was done:
 * Contribution to README.md file.
 * UML took some time to draw manually.
 * Writing detailed text in [pull request #1](https://github.com/DD2480-Group17/Terasology/pull/1) of requirement 3 for [issue #3648](https://github.com/MovingBlocks/Terasology/issues/3648), and detailed Commit message for the PR.
